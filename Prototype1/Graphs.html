@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="Graphs.css">
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
+    <script src="Graphs.js"></script>
+</head>
+<body>
+    <div class="scroll"> 
+        <a href="Home.html">Home</a>
+        <a class="active" href="Graphs.html">Graphs</a>
+        <a href="AdoptorDonate.html">Adopt or Donate</a>
+        <a href="ContactUs.html">Contact Us</a>
+    </div>
+    <h1>Interactive Graphs</h1>
+    <img src="GraphImg.jpg" class="image"> 
+
+    <div id="myPlot"></div>
+
+    <div>
+        <form>
+            X axis: <select name="Xaxis">
+                <option id="X">Select X axis</option>
+                <option id="temp">Temperature</option>
+                <option id="humid">Humidity</option>
+                </select>
+            <span style="display:inline-block; width: 30px;"></span>
+            Y axis: <select name="Yaxis">
+                <option id="Y">Select Y axis</option>
+                <option id="temp">Temperature</option>
+                <option id="humid">Humidity</option>
+                </select>
+            <br><br>
+            <input type="submit" value="Plot" onclick="">
+        </form>
+    </div>
+</body>
