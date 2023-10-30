@@ -41,7 +41,7 @@ div.scroll a:hover {
     some of the other CSS overrides it and does not give the correct output */
 }
 
-.image {
+.myPlot {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -54,7 +54,7 @@ h1 {
     text-align: center;
 }
 
-input[type="submit"] {
+input[type="button"] {
     padding: 12px 20px;
     background-color: lightgrey;
     border-radius: 4px;

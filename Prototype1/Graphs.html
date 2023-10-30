@@ -1,9 +1,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="Graphs.css">
-    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
     <script src="Graphs.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-<body>
+<body onload="graphPlot()">
     <div class="scroll"> 
         <a href="Home.html">Home</a>
         <a class="active" href="Graphs.html">Graphs</a>
@@ -11,25 +11,25 @@
         <a href="ContactUs.html">Contact Us</a>
     </div>
     <h1>Interactive Graphs</h1>
-    <img src="GraphImg.jpg" class="image"> 
+    <div id="myPlot" class="myPlot"></div>
 
-    <div id="myPlot"></div>
+    <!-- <img src="GraphImg.jpg" class="image">  -->
 
     <div>
-        <form>
-            X axis: <select name="Xaxis">
-                <option id="X">Select X axis</option>
-                <option id="temp">Temperature</option>
-                <option id="humid">Humidity</option>
+        <form id="Axis">
+            X axis: <select id="Xaxis" name="Xaxis">
+                <!-- <option id="X" value="X">Select X axis</option> -->
+                <option id="temp" value="temp">Temperature</option>
+                <option id="humid" value="humid">Humidity</option>
                 </select>
             <span style="display:inline-block; width: 30px;"></span>
-            Y axis: <select name="Yaxis">
-                <option id="Y">Select Y axis</option>
-                <option id="temp">Temperature</option>
-                <option id="humid">Humidity</option>
+            Y axis: <select id="Yaxis" name="Yaxis">
+                <!-- <option id="Y" value="Y">Select Y axis</option> -->
+                <option id="humid" value="humid">Humidity</option>
+                <option id="temp" value="temp">Temperature</option>
                 </select>
             <br><br>
-            <input type="submit" value="Plot" onclick="">
+            <input type="button" value="Plot" onclick="graphPlot()">
         </form>
     </div>
 </body>
