@@ -1,0 +1,69 @@
+body {
+    background-color: #E6E18F;
+    color: black;
+    margin: 0;
+}
+
+.imghead {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 90%;
+    background-color: white;
+}
+
+/* The sections shown below are used to implement the navigation bar and 
+is reused in the other CSS file "Search.css" to create the constant bar in all files */
+
+.active {
+    background-color: dimgray !important;
+    color: white !important; /*I have had to use !important here as otherwise
+    some of the other CSS overrides it and does not give the correct output */
+}
+
+h1 {
+    text-align: center;
+    color: C2E1C2;
+    font-size: 40;
+    text-shadow: 1px 0 black;
+}
+
+h2 {
+    text-align: left;
+    color: C2E1C2;
+    font-size: 28;
+    text-shadow: 1px 0 black;
+}
+
+.turtle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+.bord {
+    display: inline-block;
+    padding: 2%;
+    background-color: white;
+    margin: 7%;
+    margin-top: 20px;
+}
+
+
+ 
+
