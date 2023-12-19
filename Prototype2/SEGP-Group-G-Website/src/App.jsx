@@ -1,12 +1,13 @@
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage.jsx";
 import ListGroup from "./components/ListGroup";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation.jsx";
+
 
 function App() {
   return(
     <div>
       {/* <Navigation></Navigation> */}
-      <HomePage></HomePage>
+      <Navigation />
       {/* <ListGroup></ListGroup> */}
     </div>
   );
