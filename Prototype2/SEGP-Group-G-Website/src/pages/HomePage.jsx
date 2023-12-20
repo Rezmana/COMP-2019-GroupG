@@ -1,9 +1,8 @@
 import React from "react";
 import "./HomePage.css";
-import Navigation from "../components/Navigation.jsx";
 import SeatruHeader from "../assets/images/SeatruHeader.png"
 // import images from 'assets/images';
-const HomePage = () => {
+export const HomePage = () => {
     return(
     <div>
         <link rel="stylesheet" type="text/css" href="HomePage.css" />
@@ -15,7 +14,6 @@ const HomePage = () => {
             <a href="AdoptorDonate.html">Adopt or Donate</a>
             <a href="ContactUs.html">Contact Us</a>
         </div> */}
-        <Navigation></Navigation>
         <div className="bord">
             <h1>Adopt a Turtle</h1>
             <div className="row">
@@ -44,4 +42,3 @@ const HomePage = () => {
     </div>
     )
 }
-export default HomePage

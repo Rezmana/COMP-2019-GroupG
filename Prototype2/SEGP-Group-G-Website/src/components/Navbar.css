@@ -15,7 +15,7 @@ nav {
     so provide better functionality */
 }
 
-#navbar a {
+nav ul li a {
     /* display: flexbox; */
     flex-direction: row;
     color: whitesmoke;
@@ -47,8 +47,7 @@ nav {
     position:relative;
     
 }
-#navbar #active, 
-#navbar a:hover
+.active, nav a:hover
 {
     background-color:#003C81;
     color: #00E2B6;

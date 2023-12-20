@@ -19,11 +19,6 @@ body {
 /* The sections shown below are used to implement the navigation bar and 
 is reused in the other CSS file "Search.css" to create the constant bar in all files */
 
-.active {
-    background-color: dimgray !important;
-    color: white !important; /*I have had to use !important here as otherwise
-    some of the other CSS overrides it and does not give the correct output */
-}
 
 h1 {
     text-align: center;

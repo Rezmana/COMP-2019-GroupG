@@ -1,14 +1,11 @@
-import React from "react";
+import React from "react"
 import "./HomePage.css";
-import Navigation from "../components/Navigation.jsx";
-import SeatruHeader from ''
 // import images from 'assets/images';
-const TrackYourTurtle = () => {
+export const TrackYourTurtle = () => {
     return(
     <div>
         <link rel="stylesheet" type="text/css" href="HomePage.css" />
         <img src="src\assets\images\SeatruHeader.png" className="imghead" />
-        <Navigation></Navigation>
         
     {/* <img src="img/SeatruHeader.png" class="imghead"> */}
     <div class="scroll"> 
@@ -28,4 +25,3 @@ const TrackYourTurtle = () => {
     </div>
     )
 }
-export default TrackYourTurtle
