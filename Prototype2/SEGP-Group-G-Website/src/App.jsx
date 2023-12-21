@@ -1,5 +1,4 @@
 import {HomePage} from "./pages/HomePage.jsx";
-import ListGroup from "./components/ListGroup";
 import { Graphs } from "./pages/Graphs.jsx";
 import { Route, Routes } from "react-router-dom";
 import {TrackYourTurtle} from "./pages/TrackYourTurtle.jsx";
@@ -13,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/TurtleGraphs" element={<Graphs />} />
           <Route path="/TrackTurtles" element={<TrackYourTurtle />} />
           <Route path="/HomePage" element={<HomePage />} />

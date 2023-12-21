@@ -17,7 +17,6 @@ export const Navbar = () => {
                     <li>
                         <NavLink to ="/TrackTurtles">TrackTurtles</NavLink>
                     </li>
-                    {/* <li><a>Track your Turtle</a></li> */}
                     <li>
                         <NavLink to ="/Donate">AdoptNDonate</NavLink>
                     </li>

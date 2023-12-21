@@ -1,19 +1,8 @@
 import React from "react";
 import "./HomePage.css";
-import SeatruHeader from "../assets/images/SeatruHeader.png"
-// import images from 'assets/images';
 export const HomePage = () => {
     return(
-    <div>
-        <link rel="stylesheet" type="text/css" href="HomePage.css" />
-        {/* <img src={SeatruHeader} className="imghead" /> */}
-        {/* <div className="scroll">
-            <a className="active" href="NewHome.html">Home</a>
-            <a href="Graphs.html">Graphs</a>
-            <a href="TrackYourTurtle.html">Track your Turtle</a>
-            <a href="AdoptorDonate.html">Adopt or Donate</a>
-            <a href="ContactUs.html">Contact Us</a>
-        </div> */}
+    <div className="Content">
         <div className="bord">
             <h1>Adopt a Turtle</h1>
             <div className="row">
