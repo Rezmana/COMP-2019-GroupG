@@ -9,6 +9,7 @@ import { Contact } from "./pages/Contact.jsx";
 function App() {
   return(
     <div>
+      <img src="src\assets\images\SeatruHeader.png" className="imghead" />
       <Navbar />
       <Routes>
         <Route>

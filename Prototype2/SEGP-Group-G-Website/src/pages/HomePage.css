@@ -11,7 +11,7 @@
 @font-face {
     font-family: 'Rubik';
     src: url("../assets/font/Rubik-SemiBold.ttf");
-    font-weight: Semi-Bold;
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -60,14 +60,16 @@ h1 {
     font-size: 40;
     text-shadow: 1px 0 black;
     font-family: "Rubik";
-    font-weight: regular;
+    font-weight: Semi-Bold;
 }
 
-h2 {
+h3 {
     text-align: left;
     color: C2E1C2;
     font-size: 28;
     text-shadow: 1px 0 black;
+    font-family: "Rubik";
+    font-weight: 600;
 }
 
 .turtle {
