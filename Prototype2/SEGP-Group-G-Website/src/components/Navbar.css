@@ -1,3 +1,10 @@
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/Fonts/Poppins-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
 nav {
     display: flexbox; /*This display method means that the scroll is not currently working but can fix later*/
     justify-content: space-between;
@@ -23,7 +30,7 @@ nav ul li a {
     /* background-color: #031351; */
     text-align: center;
     text-decoration:none;
-    font-family: inter;
+    font-family: Poppins;
     border-radius: 15px;
     padding: 15px 17px;
     transition: 0.3s ease-out;
