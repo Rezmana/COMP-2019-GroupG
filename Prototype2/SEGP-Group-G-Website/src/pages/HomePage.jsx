@@ -1,6 +1,8 @@
 import React from "react";
 import "./HomePage.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SeaTurtleImage from "../assets/images/SeaTurtle.jpg";
+import TeamPhoto from "../assets/images/TeamPhoto.jpg";
 // import TurtleTrackerImage from "./imagesg/TurtleTracker.jfif";
 
 export const HomePage = () => {
@@ -10,7 +12,7 @@ export const HomePage = () => {
                 <h1>Adopt a Turtle</h1>
                 <div className="row">
                     <div className="column">
-                        <img src={SeaTurtleImage} className="turtle" alt="Sea Turtle" />
+                        <img src={SeaTurtleImage} className="turtle" alt="Sea Turtle" width={500} height={400}/>
                     </div>
                     <div className="column">
                         <div className="bord">
@@ -27,7 +29,25 @@ export const HomePage = () => {
                         </div>
                     </div>
                     <div className="column">
-                        {/* <img src={TurtleTrackerImage} className="turtle" alt="Turtle Tracker" /> */}
+                        <img src={TeamPhoto} className="team" alt="Team Photo" width={500} height={400} />
+                    </div>
+
+                </div>
+            </div>
+            <div className="container-sm">
+                <div className="row">
+                    <div className="col">
+                        <h2>1million+</h2>
+                        <p>Turtles are poached from 1990 to 2020.</p>
+                    </div>
+                    {/* <div> HEH EH EH EHE</div> */}
+                    <div className="col">
+                        <h2>95%</h2>
+                        <p>of HawksBill Turtle and LeatherBack Turtle are poached each year</p>
+                    </div>
+                    <div className="col">
+                        <h2>61%</h2>
+                        <p>are approximately threathened or extinct due to habitat loss or bycatch</p>
                     </div>
                 </div>
             </div>
