@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Poppins;
+    src: url("../assets/Fonts/Poppins-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav {
+    display: flexbox; /*This display method means that the scroll is not currently working but can fix later*/
+    justify-content: space-between;
+    text-align: center;
+    background-color: #031351;
+    
+    margin:auto;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 5px 5px;
+    overflow: auto; 
+    white-space: nowrap;
+    /*These overflow and white-space values enable the website to 
+    use a scrollbar on the navigation when the screen is too small and 
+    so provide better functionality */
+}
+
+nav ul li a {
+    /* display: flexbox; */
+    flex-direction: row;
+    color: whitesmoke;
+    font-weight: 600;
+    /* background-color: #031351; */
+    text-align: center;
+    text-decoration:none;
+    font-family: Poppins;
+    border-radius: 15px;
+    padding: 15px 17px;
+    transition: 0.3s ease-out;
+    position: relative;
+    
+    /* width: 15%; */
+    /* margin: 10%; */
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+#navbar li{
+    list-style:none;
+    padding: 10px 5px;
+    position:relative;
+    
+}
+.active, nav a:hover
+{
+    background-color:#003C81;
+    color: #00E2B6;
+}
+

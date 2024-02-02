@@ -35,11 +35,11 @@ div.scroll a:hover {
     color: white;
 }
 
-.active {
+/* .active {
     background-color: dimgray;
     color: white !important; /*I have had to use !important here as otherwise
     some of the other CSS overrides it and does not give the correct output */
-}
+ */
 
 .image {
     display: block;
