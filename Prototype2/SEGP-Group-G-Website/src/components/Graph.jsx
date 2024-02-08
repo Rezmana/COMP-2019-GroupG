@@ -1,41 +1,18 @@
-import { Scatter } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { Chart } from 'chart.js/auto'
 
 const data = {
+    labels: [1,2,3,4,5,6,7],
     datasets: [
     {
       label: 'Temperature',
-      data: [{
-        x: -10,
-        y: 0
-      }, {
-        x: 0,
-        y: 10
-      }, {
-        x: 10,
-        y: 5
-      }, {
-        x: 0.5,
-        y: 5.5
-      }],
+      data: [2,4,6,8,2,4,7],
       backgroundColor: 'rgb(255, 99, 132)',
       yAxisID: 'y'
     },
     {
         label: 'Humidity',
-        data: [{
-          x: -11,
-          y: 0
-        }, {
-          x: 2,
-          y: 10
-        }, {
-          x: 10,
-          y: 8
-        }, {
-          x: 0.5,
-          y: 6.5
-        }],
+        data: [1,3,5,7,9,11,11],
         backgroundColor: 'rgb(10, 99, 132)',
         yAxisID: 'y2'
     }
@@ -44,12 +21,23 @@ const data = {
 
 const Graph = () => {
   return (
-    <Scatter data={data} options={{
+    <Line data={data} options={{
         plugins: {
             title: {
                 display: true,
                 text: 'Temperature Humidity Graph'
             },
+            // zoom: {
+            //     zoom: {
+            //         pinch: {
+            //         enabled: true       // Enable pinch zooming
+            //         },
+            //         wheel: {
+            //         enabled: true       // Enable wheel zooming
+            //         },
+            //         mode: 'x'             // Allow zooming in the x direction
+            //     } 
+            // },
         },
         scales: {
             y: {
@@ -66,7 +54,7 @@ const Graph = () => {
                     color: 'rgb(10, 99, 132)'
                 },
             }
-        }
+        },
     }}/>
   )
 }
