@@ -1,0 +1,26 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'); */
+
+@font-face {
+    font-family: Rubik;
+    src: url("../assets/Fonts/Rubik-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: Rubik;
+    src: url("../assets/Fonts/Rubik-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+.Content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.graph {
+    min-height: auto;
+    width: 70%;
+}
