@@ -6,13 +6,15 @@ export const Navbar = () => {
     return (
         <nav>
             <div className="Navigation">
-                <NavLink to ="/HomePage"></NavLink>
                 <ul id="navbar">
                     <li>
-                    <NavLink to ="/HomePage">Home</NavLink>
+                        <NavLink to ="/Login">Login/Signup</NavLink>
                     </li>
                     <li>
-                        <NavLink to ="/TurtleGraphs">Graphs</NavLink>
+                        <NavLink to ="/HomePage">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to ="/Graphs">Graphs</NavLink>
                     </li>
                     <li>
                         <NavLink to ="/TrackTurtles">TrackTurtles</NavLink>

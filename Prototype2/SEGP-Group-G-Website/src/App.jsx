@@ -1,4 +1,6 @@
 import {HomePage} from "./pages/HomePage.jsx";
+import {Login} from "./pages/Login.jsx";
+import {Signup} from "./pages/Signup.jsx";
 import { Graphs } from "./pages/Graphs.jsx";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import {TrackYourTurtle} from "./pages/TrackYourTurtle.jsx";
@@ -19,13 +21,17 @@ function App() {
     }
   }, [location.pathname, navigate]);
 
+  
+
   return(
     <div>
       <img src="src\assets\images\SeatruHeader.png" className="imghead" />
       <Navbar />
       <Routes>
         <Route>
-          <Route path="/TurtleGraphs" element={<Graphs />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Graphs" element={<Graphs />} />
           <Route path="/TrackTurtles" element={<TrackYourTurtle />} />
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/Donate" element={<AdoptNDonate />} />
