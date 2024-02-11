@@ -19,6 +19,8 @@ function App() {
     }
   }, [location.pathname, navigate]);
 
+  
+
   return(
     <div>
       <img src="src\assets\images\SeatruHeader.png" className="imghead" />
