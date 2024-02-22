@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CoordinatesController;
+use App\Http\Controllers\Api\UserDataController;
+use App\Http\Controllers\UserLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +25,6 @@ Route::post('coordinates', function (Request $request) {
         'message' => $request->message,
     ]);
 });
+
+// Route::get('getCoordinates', [UserLoginController::class, 'index']);
+// Route::post('storeUserLogin', [UserLoginController::class, 'store']);

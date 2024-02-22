@@ -1,8 +1,13 @@
 <?php
 
+// use App\Http\Controllers\Api\UserDataController;
+use App\Http\Controllers\UserDataController;
+use App\Http\Controllers\UserLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CoordinatesController;
+// use App\Http\Controllers\Api\UserLoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('user', function (Request $request) {
-// Route::apiResource('HomePage', CoordinatesController::class);
+Route::get('getCoordinates', [CoordinatesController::class, 'index']);
 
-Route::get('/getCoordinates', [CoordinatesController::class, 'index']);
+Route::post('storeUserData', [UserDataController::class, 'store']);
 
+Route::post('/storeUserDetails', [UserDataController::class, 'store']);
+
+// Route::post('storeUserLogin', [UserLoginController::class, 'store']);
+Route::match(['get', 'post'], '/storeUserLogin', [UserLoginController::class, 'store']);
+// Route::any('storeUserLogin', [UserLoginController::class, 'store']);

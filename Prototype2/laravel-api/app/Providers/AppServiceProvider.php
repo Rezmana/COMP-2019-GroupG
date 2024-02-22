@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Cache\NullStore;
+use Cache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -12,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        
     }
 
     /**
@@ -19,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        \URL::forceScheme('http');
+        Cache::extend('none', function ($app) {
+            return Cache::repository(new NullStore);
+        });
     }
 }
