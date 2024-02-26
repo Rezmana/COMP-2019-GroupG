@@ -32,8 +32,19 @@ export const AdoptNDonate = () => {
       }
     };
 
+    const deleteUser = (e) => {
+      e.preventDefault();
+      axios.delete(`http://localhost:8000/api/deleteUserLogin/${formData.Username}`, formData)
+      .then((result) => {
+        console.log('User deleted:', result.data);
+      })
+      .catch((error) => {
+        console.error('Error deleting user:', error.response.data);
+      });
+    }
+
     return (
-      <form onSubmit={handleSubmit} method='POST'>
+    <form onSubmit={deleteUser}>
     {/* Use a hidden input field to specify the method as PUT */}
     <input type="hidden" name="_method" value="PUT" />
     <h1>Adopt or Donate</h1>
@@ -41,8 +52,8 @@ export const AdoptNDonate = () => {
     <p>Adopt a turtle</p>
     <input type="text" placeholder="Username" value={formData.Username} onChange={(e) => setFormData({ ...formData, Username: e.target.value })} />
     {/* <input type="email" placeholder="Email" value={formData.email}/> */}
-    <input type="password" placeholder="Enter Password" value={formData.Password} onChange={(e) => setFormData({ ...formData, Password: e.target.value })} />
-    <button type='submit'>Enter</button>
+    {/* <input type="password" placeholder="Enter Password" value={formData.Password} onChange={(e) => setFormData({ ...formData, Password: e.target.value })} /> */}
+    <button type='submit' onClick={deleteUser}>Enter</button>
   </form>
   )
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\userLogin;
 use Illuminate\Http\Request;
 
+use DB;
+
 
 class UserLoginController extends Controller
 {
@@ -83,8 +85,27 @@ class UserLoginController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(userLogin $userLogin)
+    public function destroy($username)
+// {
+//     $userlogin = UserLogin::where('Username', $username)->first();
+
+//     if (!$userlogin) {
+//         return response()->json(['message' => 'User not found'], 404);
+//     }
+
+//     $userlogin->delete();
+
+//     return response()->json(['message' => 'User deleted successfully'], 200);
+// }
     {
-        //
+        $userlogin = UserLogin::where('Username', $username);
+        if(!$userlogin){
+            // $userlogin->delete();
+            return response()->json(['message' => 'Data not found'], 404);
+        }
+        else{
+            $userlogin->delete();
+            return response()->json(['message' => 'Data deleted successfully'], 200);
+        }
     }
 }
