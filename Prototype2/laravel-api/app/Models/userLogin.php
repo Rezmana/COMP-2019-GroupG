@@ -11,7 +11,7 @@ class userLogin extends Model
 
     protected $table = 'userlogin';
 
-    // protected $primaryKey = 'UserID';
+    protected $primaryKey = 'UserID';
 
     protected $fillable = ['Username', 'Password'];
 }

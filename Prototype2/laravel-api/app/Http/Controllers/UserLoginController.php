@@ -77,9 +77,19 @@ class UserLoginController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, userLogin $userLogin)
+    public function update(Request $request, $userName)
     {
-        //
+        $user = UserLogin::where('Username', $userName)->first(); // Fetch the user object
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        // Update the user's password attribute with the new value
+        $user->password = $request->input('Password');
+        $user->save(); // Save the changes to the database
+
+        return response()->json(['message' => 'User updated successfully', 'data' => $user], 200);
     }
 
     /**

@@ -40,7 +40,7 @@ export const HomePage = () => {
                 console.error('Error fetching data:', error);
             });
     }, []);
-
+    //fetching data from the database using an API
     return (
         <div>
         <h1>API Data</h1>

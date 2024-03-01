@@ -33,4 +33,5 @@ Route::post('/storeUserDetails', [UserDataController::class, 'store']);
 // Route::post('storeUserLogin', [UserLoginController::class, 'store']);
 Route::match(['get', 'post'], 'storeUserLogin', [UserLoginController::class, 'store']);
 Route::match(['get', 'post', 'delete'], '/deleteUserLogin/{Username}', [UserLoginController::class, 'destroy']);
+Route::match(['get', 'post', 'put'], '/updateUserLogin/{Username}', [UserLoginController::class, 'update']);
 // Route::any('storeUserLogin', [UserLoginController::class, 'store']);
