@@ -9,8 +9,8 @@ const Graph = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    var temp = [];
-    var humd = [];
+    var temperature = [];
+    var humidity = [];
     var time = [];
 
     useEffect(() => {
@@ -24,11 +24,23 @@ const Graph = () => {
             });
     }, []);
 
-    //This is to append the data from the 
+    //This is to append the data from the database and then sort it.
     for(let i = 0; i < graphData.length ; i++) {
-        temp.push(graphData[i].Temperature);
-        humd.push(graphData[i].Humidity);
+        temperature.push(graphData[i].Temperature);
+        humidity.push(graphData[i].Humidity);
         time.push(graphData[i].Time);
+        
+        if (i != 0) {  
+            for (let x = i; x > 0; x--) {
+                let t1 = new Date(time[x]);
+                let t2 = new Date(time[x-1]);
+                if (t1 < t2){ //|| (t1.getDate() == t2.getDate() && t1.getTime() < t2.getTime()) CAN USE THIS CODE IF IT STOPS WORKING?
+                    time[x] = time.splice(x - 1, 1, time[x])[0];
+                    temperature[x] = temperature.splice(x - 1, 1, temperature[x])[0];
+                    humidity[x] = humidity.splice(x - 1, 1, humidity[x])[0];
+                };
+            };
+        };
     };
 
     const data = {
@@ -36,13 +48,13 @@ const Graph = () => {
         datasets: [
         {
             label: 'Temperature',
-            data: temp,
+            data: temperature,
             backgroundColor: 'rgb(255, 99, 132)',
             yAxisID: 'y'
         },
         {
             label: 'Humidity',
-            data: humd,
+            data: humidity,
             backgroundColor: 'rgb(10, 99, 132)',
             yAxisID: 'y2'
         }
