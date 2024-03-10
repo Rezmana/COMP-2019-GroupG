@@ -30,23 +30,23 @@ use App\Http\Controllers\SessionsController;
             
 
 //THESE ARE THE LOGIN PAGE/SIGN UP
-// Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
-// Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-// Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
-// Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
-// Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
-// Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
-// Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
-// Route::get('verify', function () {
-// 	return view('sessions.password.verify');
-// })->middleware('guest')->name('verify'); 
-// Route::get('/reset-password/{token}', function ($token) {
-// 	return view('sessions.password.reset', ['token' => $token]);
-// })->middleware('guest')->name('password.reset');
+Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
+Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
+Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
+Route::get('verify', function () {
+	return view('sessions.password.verify');
+})->middleware('guest')->name('verify'); 
+Route::get('/reset-password/{token}', function ($token) {
+	return view('sessions.password.reset', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
 
 
 //THESE ARE PART OF THE DASHBOARD PAGE
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('guest')->name('dashboard'); 
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard'); 
 		//changed above middleware input to "guest" from "auth" 
 
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
