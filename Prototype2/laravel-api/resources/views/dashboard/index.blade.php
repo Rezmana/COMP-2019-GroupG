@@ -561,7 +561,7 @@
                     </div>
                 </div>
             </div>
-            <x-footers.auth></x-footers.auth>
+            <!-- <x-footers.auth></x-footers.auth> THIS CONTAINS THE CREATIVE TIM FOOTER--> 
         </div>
     </main>
     <x-plugins></x-plugins>

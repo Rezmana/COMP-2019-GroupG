@@ -59,12 +59,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('tables', function () {
 		return view('pages.tables');
 	})->name('tables');
-	Route::get('rtl', function () {
-		return view('pages.rtl');
-	})->name('rtl');
-	Route::get('virtual-reality', function () {
-		return view('pages.virtual-reality');
-	})->name('virtual-reality');
+	// Route::get('rtl', function () {
+	// 	return view('pages.rtl');
+	// })->name('rtl');
+	// Route::get('virtual-reality', function () {
+	// 	return view('pages.virtual-reality');
+	// })->name('virtual-reality');
 	Route::get('notifications', function () {
 		return view('pages.notifications');
 	})->name('notifications');
