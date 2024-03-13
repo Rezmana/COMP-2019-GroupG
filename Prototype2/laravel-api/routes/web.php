@@ -47,12 +47,11 @@ Route::get('/reset-password/{token}', function ($token) {
 
 //THESE ARE PART OF THE DASHBOARD PAGE
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
-		//changed above middleware input to "guest" from "auth"
 
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
 Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
-Route::group(['middleware' => 'guest'], function () {
+Route::group(['middleware' => 'auth'], function () {
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
