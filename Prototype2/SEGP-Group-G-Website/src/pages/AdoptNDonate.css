@@ -27,6 +27,14 @@
     color: #333;
     background-color: #f3e4d7; */
   } 
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    /* flex-direction: column; */
+  }
   
   /* height of the container */
   
