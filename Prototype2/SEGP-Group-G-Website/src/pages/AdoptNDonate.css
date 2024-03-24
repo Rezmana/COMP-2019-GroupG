@@ -9,6 +9,7 @@
 
   
   body {
+    animation: name duration timing-function delay iteration-count direction fill-mode;
     margin: 0;
     padding: 0;
     display: flex;
@@ -17,7 +18,7 @@
   }
   
   #root {
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
