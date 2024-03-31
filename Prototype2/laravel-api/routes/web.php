@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use Illuminate\Http\Request;
+
 Route::post('coordinates', function (Request $request) {
     return response()->json([
         'message' => $request->message,
@@ -27,6 +29,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\CsvController;
 
 
 //THESE ARE THE LOGIN PAGE/SIGN UP
@@ -48,7 +51,7 @@ Route::get('/reset-password/{token}', function ($token) {
 //THESE ARE PART OF THE DASHBOARD PAGE
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 	//changed above middleware input to "guest" from "auth"
-
+Route::post('/upload', [CsvController::class, 'upload'])->name('upload');
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
 Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');

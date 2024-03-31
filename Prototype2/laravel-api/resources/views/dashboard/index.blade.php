@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
                 <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
                     <div class="card">
                         <div class="card-header pb-0">
@@ -481,8 +481,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="card h-100">
                         <div class="card-header pb-0">
                             <h6>Orders overview</h6>
@@ -560,8 +560,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- <x-footers.auth></x-footers.auth> THIS CONTAINS THE CREATIVE TIM FOOTER--> 
+            </div> -->
+            <!-- <x-footers.auth></x-footers.auth> THIS CONTAINS THE CREATIVE TIM FOOTER-->
         </div>
     </main>
     <x-plugins></x-plugins>

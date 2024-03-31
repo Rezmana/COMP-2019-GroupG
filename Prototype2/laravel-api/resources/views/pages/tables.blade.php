@@ -11,8 +11,31 @@
                             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                     <h6 class="text-white text-capitalize ps-3">Authors table</h6>
+                                    <div class="bord">
+
+                                    <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="excel_file" required>
+                                        <button type="submit">Submit</button>
+
+                                    </form>
+                                    @if(isset($ninthColumn))
+                                        <ul>
+                                            @foreach($ninthColumn as $value)
+                                                <li>{{ $value[0] }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+                                    @if(isset($tenthColumn))
+                                        <ul>
+                                            @foreach($tenthColumn as $value)
+                                                <li>{{ $value[0] }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                                 </div>
-                            </div>
+                                </div>
                             <div class="card-body px-0 pb-2">
                                 <div class="table-responsive p-0">
                                     <table class="table align-items-center mb-0">
