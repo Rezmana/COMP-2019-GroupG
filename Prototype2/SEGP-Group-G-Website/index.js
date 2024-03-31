@@ -4,7 +4,7 @@ const ApiKey = "SG.wIPRDCRcRKCxdQ-Alyub5A.9WpgtFPRvh8kTQ77s6D2ORct_MSNySEMwTHwMz
 sgMail.setApiKey(ApiKey)
 
 const msg = {
-  to: 'rezmanaagung.wibawa@gmail.com', // Change to your recipient
+  to: 'ironcolin12@gmail.com', // Change to your recipient
   from: 'rezmanaagung.wibawa@gmail.com', // Change to your verified sender
   subject: 'Sending with SendGrid is Fun',
   text: 'and easy to do anywhere, even with Node.js',
