@@ -17569,3 +17569,11 @@ pre[class*="language-"] {
     overflow: auto !important; } }
 
 /*# sourceMappingURL=material-dashboard.css.map */
+
+.bord {
+    display: block;
+    padding: 2%;
+    background-color: black;
+    margin: 7%;
+    margin-top: 20px;
+}
