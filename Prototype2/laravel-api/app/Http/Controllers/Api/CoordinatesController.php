@@ -62,5 +62,9 @@ class CoordinatesController extends Controller
     
         //     return view('some-view')->with('users', $users);
         // }
-        
+
+    public function show($id){
+        $TurtleCoordinate = Coordinates::where('TurtleID', $id)->get();
+        return response()->json($TurtleCoordinate);
+    }   
 }

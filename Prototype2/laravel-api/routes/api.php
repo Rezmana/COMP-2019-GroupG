@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CoordinatesController;
-use App\Http\Controllers\Api\GraphingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::apiResource('HomePage', CoordinatesController::class);
 
 Route::get('/getCoordinates', [CoordinatesController::class, 'index']);
-
-//Added by LB to get the graph data
-Route::get('/getGraphData', [GraphingController::class, 'index']);
-
+Route::get('/getCoordinates/{id}', [CoordinatesController::class, 'show']);
