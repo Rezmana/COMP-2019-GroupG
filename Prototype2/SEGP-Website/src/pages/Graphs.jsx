@@ -4,10 +4,12 @@ import Graph from "../components/Graph"
 
 export const Graphs = () => {
   return (
-    <div className='Content'>
-        <div className='graph'>
-          <Graph />
-        </div>
+    <div>
+      <div className='Content'>
+          <div className='graph'>
+            <Graph />
+          </div>
+      </div>
     </div>
   )
 }
