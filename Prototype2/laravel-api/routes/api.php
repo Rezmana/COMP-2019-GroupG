@@ -1,17 +1,18 @@
 <?php
 
+use App\Http\Controllers\Api\CoordinatesController;
+use App\Http\Controllers\Api\LoginSignupController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\CoordinatesController;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| Api Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
+| Here is where you can register Api routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your Api!
 |
 */
 
@@ -20,7 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::get('user', function (Request $request) {
-// Route::apiResource('HomePage', CoordinatesController::class);
+// Route::apiResource('HomePage', CoordinatesController::class);S
 
 Route::get('/getCoordinates', [CoordinatesController::class, 'index']);
 
+Route::post('/login', [LoginSignupController::class, 'login']);
+Route::post('/signup', [LoginSignupController::class, 'signup']);
