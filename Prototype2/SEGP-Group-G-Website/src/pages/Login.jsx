@@ -1,84 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import "./LoginSignup.css";
+import React from 'react'
+import {NavLink} from "react-router-dom"
 
-export function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-
-  const handleUsername = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-      // check whether username and password are empty
-  if (!username || !password) {
-    setError('Username and password are required.');
-    return;
-  }
-
-    try {
-      const response = await axios.post('http://localhost:8000/api/login', {
-        username,
-        password
-      });
-      console.log('Login successful:', response.data);
-      const role = response.data;
-      if (role === 'admin') {
-        navigate('/admin');
-      } else if (role === 'user') {
-        navigate('/user');
-      } else {
-        setError('Invalid role');
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      if (error.response && error.response.data && error.response.data.res) {
-        // show error msg from backend
-        setError(error.response.data.res);
-      } else {
-        // show normal error msg
-        setError('Login failed. Please try again.');
-      }
-    }
-  };
-
+export const Login = () => {
   return (
-    <div className="loginsignup-container">
+    <div>
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form action="login.php" method="post">
         <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={handleUsername}
-          required
-        />
+        <input type="text" id="username" name="username" required />
         <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-          required
-        />
+        <input type="password" id="password" name="password" required />
         <button type="submit">Login</button>
       </form>
-      {error && <p>{error}</p>}
-      <p>Don't have an account? <Link to="/signup">Signup here</Link>.</p>
+      <div>
+       <li><NavLink to ="/Signup">Click here to Signup for your first account!</NavLink></li>
+      </div>
     </div>
-  );
+  )
 }
-

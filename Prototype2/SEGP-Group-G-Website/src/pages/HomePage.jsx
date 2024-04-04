@@ -31,7 +31,7 @@ export const HomePage = () => {
     const [error, setError] = useState(null);
   
     useEffect(() => {
-        axios.get('http://localhost:8000/api/getCoordinates')
+        axios.get('http://localhost:8000/api/get')
             .then(response => {
                 setData(response.data);
                 console.log(response.data); // Process the data received from the API
