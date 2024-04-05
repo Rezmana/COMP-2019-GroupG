@@ -19,21 +19,6 @@
                                         <button type="submit">Submit</button>
 
                                     </form>
-                                    @if(isset($ninthColumn))
-                                        <ul>
-                                            @foreach($ninthColumn as $value)
-                                                <li>{{ $value[0] }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-
-                                    @if(isset($tenthColumn))
-                                        <ul>
-                                            @foreach($tenthColumn as $value)
-                                                <li>{{ $value[0] }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
                                 </div>
                                 </div>
                             <div class="card-body px-0 pb-2">
