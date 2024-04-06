@@ -1,0 +1,57 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styles for the preview section */
+  .preview {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .preview.fade-in {
+    opacity: 1;
+  }
+  
+  /* Styles for the body section */
+  .body {
+    padding: 20px;
+  }
+  
+  /* Styles for the container */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Styles for the heading */
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Styles for the text */
+  .text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Styles for the link */
+  .link {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .link:hover {
+    color: darkblue;
+  }
+  
+  /* Styles for the horizontal rule */
+  .hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
