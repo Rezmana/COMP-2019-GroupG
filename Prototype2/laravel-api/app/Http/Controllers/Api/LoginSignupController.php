@@ -34,6 +34,7 @@ class LoginSignupController extends Controller
         } elseif ($user) {
             $token = $name . 'user_token';
             return response()->json(['res' => 'Login Successful', 'token' => $token, 'role' => 'user']);
+            // return redirect('/sign-in');
         } else {
             return response()->json(['res' => 'Username or Password is wrong', 'code' => 400]);
         }

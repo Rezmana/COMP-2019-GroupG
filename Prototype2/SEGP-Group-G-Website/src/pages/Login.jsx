@@ -32,7 +32,7 @@ export function Login() {
         password
       });
       console.log('Login successful:', response.data);
-      const role = response.data;
+      const role = response.data.role; //ADDED .role HERE AS IT PREVIOUSLY WASN'T WORKING CORRECTLY LB
       if (role === 'admin') {
         navigate('/admin');
       } else if (role === 'user') {
