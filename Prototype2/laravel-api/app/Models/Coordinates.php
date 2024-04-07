@@ -8,4 +8,5 @@ class Coordinates extends Model
 {
     protected $table = 'coordinates';
     protected $fillable = ['latitude', 'longitude', 'TurtleID', 'Time'];
+    public $timestamps = false;
 }
