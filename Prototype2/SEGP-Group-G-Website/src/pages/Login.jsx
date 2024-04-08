@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import "./LoginSignup.css";
@@ -36,6 +36,7 @@ export function Login() {
       if (role === 'admin') {
         navigate('/admin');
       } else if (role === 'user') {
+        window.location.href = "http://localhost:8000/dashboard";
         navigate('/user');
       } else {
         setError('Invalid role');

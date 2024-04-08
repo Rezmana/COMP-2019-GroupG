@@ -6,6 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+Use Str;
+Use Hash;
+use Illuminate\Auth\Events\PasswordReset;
+use App\Models\User;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Password;
+
 class LoginSignupController extends Controller
 {
     /**
@@ -33,8 +40,8 @@ class LoginSignupController extends Controller
             return response()->json(['res' => 'Login Successful', 'token' => $token, 'role' => 'admin']);
         } elseif ($user) {
             $token = $name . 'user_token';
+            // auth()->attempt($request);
             return response()->json(['res' => 'Login Successful', 'token' => $token, 'role' => 'user']);
-            // return redirect('/sign-in');
         } else {
             return response()->json(['res' => 'Username or Password is wrong', 'code' => 400]);
         }

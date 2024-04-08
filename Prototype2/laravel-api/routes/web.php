@@ -50,7 +50,6 @@ Route::get('/reset-password/{token}', function ($token) {
 
 //THESE ARE PART OF THE DASHBOARD PAGE
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
-	//changed above middleware input to "guest" from "auth"
 Route::post('/upload', [CsvController::class, 'upload'])->name('upload');
 Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
