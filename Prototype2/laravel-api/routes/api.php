@@ -25,5 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/getCoordinates', [CoordinatesController::class, 'index']);
 
-Route::post('/login', [LoginSignupController::class, 'login']);
+Route::post('/login', [LoginSignupController::class, 'login'])->middleware('guest');
 Route::post('/signup', [LoginSignupController::class, 'signup']);
