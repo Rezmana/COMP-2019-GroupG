@@ -30,6 +30,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\CsvController;
+use App\Http\Controllers\UserController;
 
 
 //THESE ARE THE LOGIN PAGE/SIGN UP
@@ -49,24 +50,24 @@ Route::get('/reset-password/{token}', function ($token) {
 
 
 //THESE ARE PART OF THE DASHBOARD PAGE
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('guest')->name('dashboard');
 Route::post('/upload', [CsvController::class, 'upload'])->name('upload');
-Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout');
-Route::get('profile', [ProfileController::class, 'create'])->middleware('auth')->name('profile');
-Route::post('user-profile', [ProfileController::class, 'update'])->middleware('auth');
-Route::group(['middleware' => 'auth'], function () {
+Route::post('sign-out', [SessionsController::class, 'destroy'])->middleware('guest')->name('logout');
+
+Route::get('user-management', [UserController::class, 'index'])->middleware('guest')->name('user-management');
+Route::get('user-management/create', [UserController::class, 'create'])->middleware('guest');
+Route::post('user-management/create', [UserController::class, 'store'])->middleware('guest');
+Route::get('user-management/{id}/edit', [UserController::class, 'edit'])->middleware('guest');
+Route::put('user-management/{id}/edit', [UserController::class, 'update'])->middleware('guest');
+Route::get('user-management/{id}/delete', [UserController::class, 'delete'])->middleware('guest');
+
+Route::group(['middleware' => 'guest'], function () {
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
 	Route::get('tables', function () {
 		return view('pages.tables');
 	})->name('tables');
-	Route::get('rtl', function () {
-		return view('pages.rtl');
-	})->name('rtl');
-	Route::get('virtual-reality', function () {
-		return view('pages.virtual-reality');
-	})->name('virtual-reality');
 	Route::get('notifications', function () {
 		return view('pages.notifications');
 	})->name('notifications');
@@ -76,10 +77,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('static-sign-up', function () {
 		return view('pages.static-sign-up');
 	})->name('static-sign-up');
-	Route::get('user-management', function () {
-		return view('pages.laravel-examples.user-management');
-	})->name('user-management');
-	Route::get('user-profile', function () {
-		return view('pages.laravel-examples.user-profile');
-	})->name('user-profile');
 });
