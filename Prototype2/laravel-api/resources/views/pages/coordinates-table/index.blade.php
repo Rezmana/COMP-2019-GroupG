@@ -16,8 +16,13 @@
                             <div class="card-body p-5">
                                 <form action="{{ route('upload') }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <input type="file" name="excel_file" required>
-                                    <button type="submit">Submit</button>
+                                    <div class="mb-3 col-md-12">
+                                        <input type="file" name="excel_file" required>
+                                        <p class="help-block">Please select a '.csv' file to upload</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn bg-gradient-success">Submit</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
