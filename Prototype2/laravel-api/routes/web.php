@@ -31,6 +31,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\CsvController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CoordinatesTableController;
+use App\Http\Controllers\TempHumidityTableController;
 
 
 //THESE ARE THE LOGIN PAGE/SIGN UP
@@ -61,13 +63,20 @@ Route::get('user-management/{id}/edit', [UserController::class, 'edit'])->middle
 Route::put('user-management/{id}/edit', [UserController::class, 'update'])->middleware('guest');
 Route::get('user-management/{id}/delete', [UserController::class, 'delete'])->middleware('guest');
 
+Route::get('coordinates-table', [CoordinatesTableController::class, 'index'])->middleware('guest')->name('coordinates-table');
+Route::get('coordinates-table/{Latitude}/{Longitude}/{Time}/edit', [CoordinatesTableController::class, 'edit'])->middleware('guest');
+Route::put('coordinates-table/{Latitude}/{Longitude}/{Time}/edit', [CoordinatesTableController::class, 'update'])->middleware('guest');
+Route::get('coordinates-table/{Latitude}/{Longitude}/{Time}/delete', [CoordinatesTableController::class, 'delete'])->middleware('guest');
+
+Route::get('temphumidity-table', [TempHumidityTableController::class, 'index'])->middleware('guest')->name('temphumidity-table');
+Route::get('temphumidity-table/{Temperature}/{Humidity}/{Time}/edit', [TempHumidityTableController::class, 'edit'])->middleware('guest');
+Route::put('temphumidity-table/{Temperature}/{Humidity}/{Time}/edit', [TempHumidityTableController::class, 'update'])->middleware('guest');
+Route::get('temphumidity-table/{Temperature}/{Humidity}/{Time}/delete', [TempHumidityTableController::class, 'delete'])->middleware('guest');
+
 Route::group(['middleware' => 'guest'], function () {
 	Route::get('billing', function () {
 		return view('pages.billing');
 	})->name('billing');
-	Route::get('tables', function () {
-		return view('pages.tables');
-	})->name('tables');
 	Route::get('notifications', function () {
 		return view('pages.notifications');
 	})->name('notifications');

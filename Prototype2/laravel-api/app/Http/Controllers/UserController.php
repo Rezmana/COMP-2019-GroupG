@@ -10,12 +10,12 @@ class UserController extends Controller
     public function index()
     {
         $users = Userlogin::get();
-        return view('user-management.index', compact('users'));
+        return view('pages.user-management.index', compact('users'));
     }
 
     public function create() 
     {
-        return view('user-management.create');
+        return view('pages.user-management.create');
     }
 
     public function store(Request $request) 
@@ -34,7 +34,7 @@ class UserController extends Controller
     public function edit(int $id)
     {
         $user = Userlogin::where('UserID', $id)->first();
-        return view('user-management.edit', compact('user'));
+        return view('pages.user-management.edit', compact('user'));
     }
 
     public function update(Request $request, int $id)
