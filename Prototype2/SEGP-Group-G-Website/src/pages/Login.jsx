@@ -32,11 +32,11 @@ export function Login() {
         password
       });
       console.log('Login successful:', response.data);
-      const role = response.data.role; //ADDED .role HERE AS IT PREVIOUSLY WASN'T WORKING CORRECTLY LB
+      const role = response.data.role; 
       if (role === 'admin') {
+        window.location.href = "http://localhost:8000/user-management";
         navigate('/admin');
       } else if (role === 'user') {
-        window.location.href = "http://localhost:8000/user-management";
         navigate('/user');
       } else {
         setError('Invalid role');

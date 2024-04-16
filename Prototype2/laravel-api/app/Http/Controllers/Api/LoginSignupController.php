@@ -40,7 +40,6 @@ class LoginSignupController extends Controller
             return response()->json(['res' => 'Login Successful', 'token' => $token, 'role' => 'admin']);
         } elseif ($user) {
             $token = $name . 'user_token';
-            // auth()->attempt($request);
             return response()->json(['res' => 'Login Successful', 'token' => $token, 'role' => 'user']);
         } else {
             return response()->json(['res' => 'Username or Password is wrong', 'code' => 400]);
