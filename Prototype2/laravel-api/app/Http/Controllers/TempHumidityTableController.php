@@ -13,23 +13,23 @@ class TempHumidityTableController extends Controller
         return view('pages.temphumidity-table.index', compact('temphumids'));
     }
 
-    // public function create() 
-    // {
-    //     return view('user-management.create');
-    // }
+    public function create() 
+    {
+        return view('pages.temphumidity-table.create');
+    }
 
-    // public function store(Request $request) 
-    // {
-    //     $attributes = request()->validate([
-    //         'Username' => 'required|max:255',
-    //         'Password' => 'required|max:255',
-    //         'Email' => 'required|email'
-    //     ]);
+    public function store(Request $request) 
+    {
+        $attributes = request()->validate([
+            'Temperature' => 'required|int',
+            'Humidity' => 'required|int',
+            'Time' => 'required|date_format:Y-m-d H:i:s'
+        ]);
 
-    //     Userlogin::create($attributes);
+        TempHumidity::create($attributes);
 
-    //     return redirect('user-management');
-    // }
+        return redirect('temphumidity-table');
+    }
 
     public function edit(int $Temperature, int $Humidity, string $Time)
     {

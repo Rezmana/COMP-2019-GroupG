@@ -36,7 +36,7 @@ export function Login() {
       if (role === 'admin') {
         navigate('/admin');
       } else if (role === 'user') {
-        window.location.href = "http://localhost:8000/dashboard";
+        window.location.href = "http://localhost:8000/user-management";
         navigate('/user');
       } else {
         setError('Invalid role');

@@ -34,7 +34,6 @@ class CoordinatesTableController extends Controller
     public function edit(float $Latitude, float $Longitude, string $Time)
     {
         $coordinate = Coordinates::where('Latitude', $Latitude)->where('Longitude', $Longitude)->where('Time', $Time)->first();
-        error_log(var_export($coordinate, true));
         return view('pages.coordinates-table.edit', compact('coordinate'));
     }
 

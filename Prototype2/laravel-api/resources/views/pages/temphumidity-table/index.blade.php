@@ -12,7 +12,13 @@
                                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                                     <h6 class="text-white text-capitalize ps-3">Temperature Humidity table</h6>
                                 </div>
-                            <div class="card-body px-0 pb-2">
+                            </div>
+                            <div class="me-3 my-3 text-end">
+                                <a class="btn bg-gradient-dark mb-0" href=" {{ url('temphumidity-table/create') }}"><i
+                                        class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Row
+                                </a>
+                            </div>
+                            <div class="card-body py-0 px-0 pb-2">
                                 <div class="table-responsive p-0">
                                     <table class="table align-items-center mb-0">
                                         <thead>

@@ -20,7 +20,7 @@
                         </div>
                         <form method='POST' action='{{ url('user-management/'.$user->UserID.'/edit') }}'>
                             @csrf
-                            @method('PUT');
+                            @method('PUT')
                             <div class="py-1 px-3">    
                                 <div class="mb-3 col-md-12">
                                     <label class="form-label">User ID</label>
