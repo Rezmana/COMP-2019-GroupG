@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "react-router-dom": "^6.21.0"
+  },
+  "dependencies": {
+    "@react-email/render": "^0.0.12",
+    "@sendgrid/mail": "^8.1.1",
+    "chart.js": "^4.4.1",
+    "react-chartjs-2": "^5.2.0"
+  }
+}
