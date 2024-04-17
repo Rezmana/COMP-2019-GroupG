@@ -1,62 +1,158 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+/* AdoptNDonate.css */
 
-  #map { height: 180px; }
+body {
+    overflow-x: hidden; /* 防止页面横向滚动 */
+    margin: 0; /* 去除默认的页面 margin */
+}
 
+.adoption-title {
+    width: 80%;
+    height: 100px;
+    color: white;
+    background: url("src/assets/images/SeaTurtleHeaderImg.jpg") no-repeat;
+    background-size:  100%;
+    background-position: center top -55px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 10%;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
 
-  
-  body {
-    animation: name duration timing-function delay iteration-count direction fill-mode;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #root {
-    /* height: 100vh; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* gap: 1em;
-    font-family: sans-serif;
-    color: #333;
-    background-color: #f3e4d7; */
-  } 
-
-  form {
+.main-container {
     display: flex;
     flex-direction: column;
-    gap: 1em;
     align-items: center;
-    /* flex-direction: column; */
-  }
-  
-  /* height of the container */
-  
-  
-  .leaflet-container {
-    height: 90vh;
-    /* width: 90%; */
-    border-radius: 2rem;
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+    height: 100%;
+}
 
-  }
-  
-  .cluster-icon {
-    background-color: #333;
-    height: 2em;
-    width: 2em;
-    color: #fff;
+.adoption-container {
+    width: 100%; /* 设置容器框在行方向上的宽度 */
+    height: 50%;
+    /*margin-top: 10px; !* 调整容器框与标题之间的距离 *!*/
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    box-shadow: 0 0 0px 5px #fff;
-  }
-  
+    align-content: center;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.adoption-buttons-list, .anonymous-donation {
+    width: 75%;
+}
+
+.adoption-buttons-list {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin: 10px auto;
+    box-shadow: darkgray 0 0 4px;
+    font-size: 20px;
+}
+
+.btn-item {
+    flex: 0 0 25%;
+    height: 150px;
+    line-height: 70px;
+    cursor: pointer;
+    text-align: center;
+    margin: 25px;
+    opacity: 0.7;
+}
+
+#btn-style {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0;
+    color: black;
+    background-color: #fff;
+    border-radius: 10px !important;
+    box-shadow: #003C81 0 0 4px;
+}
+
+#btn-style:hover {
+    transition: 0.5s;
+    background-color: #005dc5;
+    color: white;
+}
+
+.anonymous-donation {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 15px auto;
+    padding-bottom: 20px;
+    box-shadow: darkgray 0 0 4px;
+    text-align: center;
+}
+
+#btn-item-input-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+#btn-item-input-text {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    margin-top: 2px;
+    border-radius: 10px !important;
+    box-shadow: #003C81 0 0 4px;
+}
+
+#btn-item-input-text:focus {
+    outline: 1px solid #3498DB;
+}
+
+
+.adoption-submit {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 10px auto;
+    padding: 15px 0;
+    background-color: #3498DB;
+    color: white;
+    box-shadow: darkgray 0 0 4px;
+}
+
+.adoption-submit:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.selected {
+    background-color: #005dc5 !important;
+    color: white !important;
+}
+
+.show-donation {
+    display: flex;
+    flex-direction: row; /* 设置子元素水平排列 */
+    justify-content: space-between; /* 确保子元素分布在容器的两端 */
+}
+
+.top-donors, .total-donation {
+    flex: 1; /* 确保两个子元素平均分配空间 */
+}
+
+
+
+

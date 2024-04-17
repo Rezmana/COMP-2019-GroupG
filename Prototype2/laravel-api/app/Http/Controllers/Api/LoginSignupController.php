@@ -6,13 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-Use Str;
-Use Hash;
-use Illuminate\Auth\Events\PasswordReset;
-use App\Models\User;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Password;
-
 class LoginSignupController extends Controller
 {
     /**
