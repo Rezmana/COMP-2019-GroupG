@@ -34,6 +34,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CoordinatesTableController;
 use App\Http\Controllers\TempHumidityTableController;
 use App\Http\Controllers\TurtleController;
+use App\Http\Controllers\ArticleController;
 
 //THESE ARE THE LOGIN PAGE/SIGN UP
 Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
@@ -79,6 +80,11 @@ Route::post('turtle-table/create', [TurtleController::class, 'store'])->middlewa
 Route::get('turtle-table/{TurtleID}/{Name}/{Species}/edit', [TurtleController::class, 'edit'])->middleware('guest');
 Route::put('turtle-table/{TurtleID}/{Name}/{Species}/edit', [TurtleController::class, 'update'])->middleware('guest');
 Route::get('turtle-table/{TurtleID}/{Name}/{Species}/delete', [TurtleController::class, 'delete'])->middleware('guest');
+
+Route::get('articles-table', [ArticleController::class, 'index'])->middleware('guest')->name('articles-table');
+Route::get('articles-table/{ID}/edit', [ArticleController::class, 'edit'])->middleware('guest');
+Route::put('articles-table/{ID}/edit', [ArticleController::class, 'update'])->middleware('guest');
+Route::get('articles-table/{ID}/delete', [ArticleController::class, 'delete'])->middleware('guest');
 
 Route::group(['middleware' => 'guest'], function () {
 	Route::get('static-sign-in', function () {

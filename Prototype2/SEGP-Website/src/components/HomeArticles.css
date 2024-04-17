@@ -15,101 +15,10 @@
     font-style: normal;
 }
 
-body {
-    background-color: #E6E18F;
-    color: black;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.fade-in-page {
-    opacity: 0;
-    transition: opacity 0.7s ease-in-out;
-  }
-  
-  .fade-in-page.visible {
-    opacity: 1;
-  }
-
-.Content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.imghead {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    width: 90%;
-    background-color: white;
-}
-
-/* The sections shown below are used to implement the navigation bar and 
-is reused in the other CSS file "Search.css" to create the constant bar in all files */
-
-
-h1 {
+.col h3 {
     text-align: center;
-    color: C2E1C2;
-    font-size: 40;
-    text-shadow: 1px 0 black;
+    font-size: 15;
+    text-shadow: 0 0;
     font-family: "Rubik";
-    font-weight: Semi-Bold;
-}
-
-h3 {
-    text-align: left;
-    color: C2E1C2;
-    font-size: 28;
-    text-shadow: 1px 0 black;
-    font-family: "Rubik";
-    font-weight: 600;
-}
-
-.turtle {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-.row {
-    display: flex;
-}
-
-.column {
-    flex: 50%;
-    padding: 10px;
-}
-
-
-.bord {
-    display: inline-block;
-    padding: 2%;
-    background-color: white;
-    margin: 7%;
-    margin-top: 20px;
-}
-
-.col, 
-.Container-article{
-    margin: 10px;
-    padding: 15px;
-}
-
-.container{
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.col h2{
     color: #00E2B6;
 }

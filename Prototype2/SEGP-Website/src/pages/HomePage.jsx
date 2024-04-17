@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import "./HomePage.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./HomePage.css";
 import SeaTurtleImage from "../assets/images/SeaTurtle.jpg";
 import TeamPhoto from "../assets/images/TeamPhoto.jpg";
 import { useState, useEffect } from 'react';
 import { Fade } from "react-awesome-reveal";
+import HomeArticles from "../components/HomeArticles";
 
 
 
@@ -66,22 +67,12 @@ export const HomePage = () => {
                         <h2>61%</h2>
                         <p>are approximately threathened or extinct due to habitat loss or bycatch</p>
                     </div>
+                    <hr/>
                 </div>
             </div>
-            <div className="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <h2>How turtles are affected rawr</h2>
-                    </div>
-                    <div class="col">
-                        <h2>Article 1</h2>
-                    </div>
-                    <div class="col">
-                        <h2>Article 1</h2>
-                        
-                    </div>
-                </div>
-            </div>
+            
+            <HomeArticles></HomeArticles>
+
             </Fade>
         </div>
     )

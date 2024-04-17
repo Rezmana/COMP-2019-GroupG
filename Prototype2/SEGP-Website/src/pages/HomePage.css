@@ -42,6 +42,15 @@ body {
     background-color: white;
 }
 
+hr {
+    border:solid 1px black;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color: black;
+    height: 1px;
+  }
+
 /* The sections shown below are used to implement the navigation bar and 
 is reused in the other CSS file "Search.css" to create the constant bar in all files */
 
@@ -58,7 +67,6 @@ h1 {
 h3 {
     text-align: left;
     color: C2E1C2;
-    font-size: 28;
     text-shadow: 1px 0 black;
     font-family: "Rubik";
     font-weight: 600;
