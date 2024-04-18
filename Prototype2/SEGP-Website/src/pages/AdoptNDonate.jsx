@@ -64,9 +64,9 @@ export const AdoptNDonate = () => {
         const donationAmountDouble = parseFloat(donationAmount);
 
         if (!isAnonymously && !isLoggedIn) {
-            alert('You need to LoggedIn or select Anonymous donation');
+            alert('You need to be logged in or select Anonymous donation');
+            sessionStorage.setItem('donating', true);
             navigate('/login');
-            return;
         } else if (!isAnonymously && isLoggedIn) {
             // 用户登录且不匿名 (User logged in and not anonymous)
             axios.post('http://localhost:8000/api/donate', {
@@ -76,8 +76,9 @@ export const AdoptNDonate = () => {
             })
             .then(response => {
                 console.log(response.data.message); // 打印后端返回的消息 (show msg returned from backend)
-                alert('Thank for your donation!,' + username + '!');
+                alert('Thank for your donation, ' + username + '!');
                 setDonationAmount(''); // 清空捐赠金额 (clear donation amount)
+                sessionStorage.removeItem('donating');
             })
             .catch(error => {
                 console.error('Error donating:', error);
@@ -116,6 +117,10 @@ export const AdoptNDonate = () => {
         setUsername(storedUsername); // 设置用户名数据到state中 (Set username data to state)
 
         setIsLoggedIn(typeof storedUsername === 'string' && storedUsername.trim() !== '');
+
+        if (sessionStorage.getItem('donating')) {
+            sessionStorage.removeItem('donating');
+        }
     }, []);
 
     useEffect(() => {
@@ -142,7 +147,7 @@ export const AdoptNDonate = () => {
         <div className="donation-page-container container main-container">
             {/*捐赠模块 (donation module)*/}
             <div className="adoption-container"> 
-                <div className="adoption-title">Welcome to Donation Page, Dear {username ? username : 'Guest'}</div>
+                <div className="adoption-title">Welcome to Donation Page{username ? ', '+username : ''}!</div>
                 <div className="adoption-buttons-list">
                     <div className="btn-item">
                         <button id="btn-style" className={selectedButton === '10' ? 'selected' : ''} onClick={() => handleDonate('10')}>10</button>

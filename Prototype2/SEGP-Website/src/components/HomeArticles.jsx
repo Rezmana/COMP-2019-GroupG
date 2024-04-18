@@ -29,9 +29,9 @@ export default function HomeArticles() {
     <div className="row">
     {data.map((item, index) => (
         <div key={index} className="col">
-          <h3>{item.Title}</h3>
+          <h2>{item.Title}</h2>
           <p>{item.Description}</p>
-          <p>{item.URL}</p>
+          <a href={item.URL}>{item.URL}</a>
         </div>
       ))
     } 

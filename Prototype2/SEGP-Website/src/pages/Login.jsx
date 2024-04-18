@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import "./LoginSignup.css";
@@ -42,9 +42,15 @@ export function Login() {
 
       const role = response.data.role;
       if (role === 'admin') {
-        navigate('/admin');
+        window.location.href = "http://localhost:8000/user-management";
+        handleLogout();
       } else if (role === 'user') {
-        navigate('/user');
+        if(sessionStorage.getItem('donating')) {
+          navigate('/Donate');
+        }
+        else {
+          navigate('/HomePage');
+        }
       } else {
         setError('Invalid account');
       }
@@ -63,11 +69,22 @@ export function Login() {
   const handleLogout = () => {
     // 清除sessionStorage中的用户名
     sessionStorage.removeItem('username');
+    sessionStorage.removeItem('donating');
     // 设置登录状态为 false
     setIsLoggedIn(false);
     // 导航回登录页面
     navigate('/login')
   }
+
+  useEffect(() => {
+    if (sessionStorage.getItem('username')) {
+      setIsLoggedIn(true);
+      setUsername(sessionStorage.getItem('username'));
+    }
+    else {
+      setIsLoggedIn(false);
+    }
+  }, []);
 
   return (
  <div className="loginsignup-container">
