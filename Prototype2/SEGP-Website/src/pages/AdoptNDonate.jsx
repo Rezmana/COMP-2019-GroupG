@@ -139,10 +139,10 @@ export const AdoptNDonate = () => {
     }, []);
     
     return (
-        <div className="container main-container">
+        <div className="donation-page-container container main-container">
             {/*捐赠模块 (donation module)*/}
             <div className="adoption-container"> 
-                <div className="adoption-title">Welcome to Donation Page, {username ? username : 'Guest'}</div>
+                <div className="adoption-title">Welcome to Donation Page, Dear {username ? username : 'Guest'}</div>
                 <div className="adoption-buttons-list">
                     <div className="btn-item">
                         <button id="btn-style" className={selectedButton === '10' ? 'selected' : ''} onClick={() => handleDonate('10')}>10</button>
@@ -187,31 +187,34 @@ export const AdoptNDonate = () => {
                 </div>
             </div>
 
-            {/*Show username*/}
-            <div>
-                <h2>Welcome, {username ? username : 'Guest'}</h2>
+        <div class="donations-layout-container">
+            <div className="scrollable-container">
+            <table className="top-donors-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>UserID</th>
+                        <th>Username</th>
+                        <th>Donation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {donors.map((donor, index) => (
+                        <tr key={index}>
+                            <td>{donor.rank}</td>
+                            <td>{donor.user.UserID}</td>
+                            <td>{donor.user.Username}</td>
+                            <td>${donor.totalDonation}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
             </div>
-
-            <div classNam="show-donation">
-                <div className="top-donors">
-                    <h2>Top Donors</h2>
-                    <ul>
-                        {donors.map((donors, index) => (
-                            <li key={index}>
-                                Rank: {donors.rank},
-                                UserID: {donors.user.UserID}, 
-                                Username: {donors.user.Username}, 
-                                Donation Amount: {donors.totalDonation}, 
-                            </li>
-                        ))}
-                    </ul>
+        </div>
+                <div className="total-donation-container">
+                    <p className="total-donation-amount">RM{totalAmount}</p>
                 </div>
 
-                <div className="total-donation">
-                    <h2>Total Donation</h2>
-                    <p>{totalAmount}</p>
-                </div>
-            </div>
 
         </div>
     )

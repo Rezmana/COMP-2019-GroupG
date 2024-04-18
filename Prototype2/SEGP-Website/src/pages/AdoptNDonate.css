@@ -143,16 +143,135 @@ body {
     color: white !important;
 }
 
-.show-donation {
+.donations-layout-container {
     display: flex;
-    flex-direction: row; /* 设置子元素水平排列 */
-    justify-content: space-between; /* 确保子元素分布在容器的两端 */
+    flex-direction: row;  /* 子元素横向排列 */
+    justify-content: space-between;  /* 子元素在主轴线上平均分布 */
+    align-items: flex-start;  /* 子元素在交叉轴上向起点对齐 */
+    width: 100%;  /* 容器宽度设为100% */
+    margin: 20px 0;  /* 上下外边距 */
 }
 
-.top-donors, .total-donation {
-    flex: 1; /* 确保两个子元素平均分配空间 */
+/* Scrollable Container for the Donors Table - Reduced Size */
+.scrollable-container {
+    width: 40%; /* 容器宽度减小到40% */
+    max-width: 500px; /* 最大宽度调整为500px */
+    height: 250px; /* 高度调整为250px */
+    overflow-y: auto; /* 垂直方向上超出部分滚动 */
+    overflow-x: hidden; /* 水平方向隐藏超出部分 */
+    border-radius: 8px; /* 圆角回归到8px */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影以增强视觉效果 */
+    margin: 20px auto; /* 居中显示 */
+    border: 1px solid #ccc; /* 边框可见性保持 */
+    background-color: #ffe096; /* 背景色为白 */
+    padding: 5px; /* 内部间距减小到5px */
+    /* 添加虚化的DONORS背景文字 */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dy=".35em" text-anchor="middle" font-size="100" font-family="Arial" fill="%23FFEEC1">DONORS</text></svg>');
+    background-size: cover;
+    position: relative; /* 设置定位方式 */
 }
 
+.top-donors-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.85em; /* 字体大小适当减小 */
+    line-height: 1.1;
+}
 
+.top-donors-table th, .top-donors-table td {
+    text-align: left;
+    padding: 4px 6px; /* 单元格padding适当调整 */
+    border-bottom: 1px solid #ddd;
+}
+
+.top-donors-table th {
+    background-color: #658dbb;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.top-donors-table tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.top-donors-table tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.top-donors-table tr:hover {
+    background-color: #f0f0f0;
+}
+
+.top-donors-table tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+/* Total Donation Style - Vertical Layout */
+.total-donation-container {
+    display: flex;  /* 使用Flexbox */
+    flex-direction: column;  /* 子元素竖直排列 */
+    align-items: center;  /* 中心对齐子元素 */
+    justify-content: center;  /* 中心对齐内容 */
+    height: 200px;  /* 容器高度 */
+    margin: 30px auto;  /* 居中显示 */
+    padding: 20px;  /* 内部间距 */
+    background-color: #f0f8ff;  /* 淡蓝色背景 */
+    border: 2px solid #007bff;  /* 蓝色边框 */
+    border-radius: 15px;  /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* 阴影效果 */
+    width: 50%;  /* 宽度 */
+    max-width: 300px;  /* 最大宽度 */
+    transition: all 0.3s ease-in-out;  /* 过渡效果 */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><text x="25%" y="50%" dy="-0.1em" text-anchor="middle" font-size="35" font-family="Arial" fill="%23d6e6ff">TOTAL DONATION</text></svg>'); /* 修正位置的虚化文字 */
+    background-size: cover; /* 背景大小覆盖整个容器 */
+    position: relative; /* 设置定位方式 */
+}
+
+.total-donation-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.total-donation-container:hover {
+    transform: scale(1.1);  /* 悬停时放大 */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.total-donation-amount:hover {
+    color: #ff4500;
+}
+
+.donation-page-container {
+    position: relative;
+    min-height: 100vh;  
+}
+
+.donation-page-container::before,
+.donation-page-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+     width: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.donation-page-container::before {
+    left: 0;
+    background-image: url('../assets/images/Hawksbill.jpg');  
+    background-position: left center;
+}
+
+.donation-page-container::after {
+    right: 0;
+    background-image: url('../assets/images/Leatherback.jpg'); 
+    background-position: right center; 
+}
 
 
