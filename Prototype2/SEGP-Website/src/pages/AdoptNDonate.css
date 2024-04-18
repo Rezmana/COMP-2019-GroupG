@@ -72,30 +72,53 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 0;
-    color: black;
+    padding: 12px 20px;
+    color: #333;
     background-color: #fff;
-    border-radius: 10px !important;
-    box-shadow: #003C81 0 0 4px;
+    border: 2px solid #005dc5;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px rgba(0, 60, 129, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 #btn-style:hover {
-    transition: 0.5s;
     background-color: #005dc5;
     color: white;
+    box-shadow: 0px 0px 12px rgba(0, 60, 129, 0.4);
 }
 
-.anonymous-donation {
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    margin: 15px auto;
-    padding-bottom: 20px;
-    box-shadow: darkgray 0 0 4px;
-    text-align: center;
+#btn-style:active {
+    transform: scale(0.98);
 }
+
+
+.anonymous-donation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 0 auto;  /* 添加自动外边距以实现水平居中 */
+    width: 80%;  /* 可调整宽度以适应不同的布局需求 */
+}
+
+.anonymous-donation:hover {
+    background-color: #e7e7e7;  /* 淡化背景颜色增加互动性 */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);  /* 加深阴影以增强深度感 */
+    transform: translateY(-3px);  /* 稍微上移增加动态效果 */
+}
+
+.anonymous-donation:active {
+    background-color: #d7d7d7;  /* 点击时的背景色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  /* 调整阴影 */
+    transform: translateY(1px);  /* 恢复位置模拟按压效果 */
+}
+
 
 #btn-item-input-checkbox {
     width: 20px;
@@ -120,22 +143,31 @@ body {
 
 .adoption-submit {
     width: 35%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    margin: 10px auto;
-    padding: 15px 0;
-    background-color: #3498DB;
-    color: white;
-    box-shadow: darkgray 0 0 4px;
+    padding: 15px 30px;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #3498DB; /* 深绿色背景 */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .adoption-submit:hover {
-    transition: 0.5s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #ffe096; /* 悬停时变为稍微淡一点的绿色 */
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
 }
+
+.adoption-submit:active {
+    transform: translateY(2px); /* 点击时按钮向下移动2px */
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
 
 
 .selected {
