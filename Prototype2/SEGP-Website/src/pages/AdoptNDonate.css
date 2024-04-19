@@ -296,13 +296,13 @@ body {
 
 .donation-page-container::before {
     left: 0;
-    background-image: url('../assets/images/Hawksbill.jpg');  
+    background-image: url('../assets/images/SeaTurtle.jpg');  
     background-position: left center;
 }
 
 .donation-page-container::after {
     right: 0;
-    background-image: url('../assets/images/Leatherback.jpg'); 
+    background-image: url('../assets/images/SeaTurtleHeaderImg.jpg'); 
     background-position: right center; 
 }
 
