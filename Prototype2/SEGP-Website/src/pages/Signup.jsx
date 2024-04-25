@@ -53,7 +53,7 @@ export function Signup() {
 
   return (
     <div className="loginsignup-container">
-      <h2>Signup</h2>
+      <h1 className="title">Signup</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
@@ -82,6 +82,8 @@ export function Signup() {
           onChange={handleEmail}
           required
         />
+
+        <br/>
 
         <button type="submit">Signup</button>
       </form>

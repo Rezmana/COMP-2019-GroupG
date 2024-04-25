@@ -34,7 +34,7 @@ const Graph = () => {
             for (let x = i; x > 0; x--) {
                 let t1 = new Date(time[x]);
                 let t2 = new Date(time[x-1]);
-                if (t1 < t2){ //|| (t1.getDate() == t2.getDate() && t1.getTime() < t2.getTime()) CAN USE THIS CODE IF IT STOPS WORKING?
+                if (t1 < t2){ 
                     time[x] = time.splice(x - 1, 1, time[x])[0];
                     temperature[x] = temperature.splice(x - 1, 1, temperature[x])[0];
                     humidity[x] = humidity.splice(x - 1, 1, humidity[x])[0];
@@ -66,35 +66,47 @@ const Graph = () => {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Temperature Humidity Graph'
                 },
-                // zoom: {
-                //     zoom: {
-                //         pinch: {
-                //         enabled: true       // Enable pinch zooming
-                //         },
-                //         wheel: {
-                //         enabled: true       // Enable wheel zooming
-                //         },
-                //         mode: 'x'             // Allow zooming in the x direction
-                //     } 
-                // },
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
             },
             scales: {
                 y: {
                     type: 'linear', 
                     position: 'left',
                     ticks: { 
-                        color: 'rgb(255, 99, 132)'
+                        color: 'rgb(255, 99, 132)',
+                        font: {
+                            size: 14
+                        }
                     },
                 },
                 y2: {
                     type: 'linear',
                     position: 'right',
                     ticks: { 
-                        color: 'rgb(10, 99, 132)'
+                        color: 'rgb(10, 99, 132)',
+                        font: {
+                            size: 14
+                        }
+                    },
+                },
+                x: {
+                    ticks: { 
+                        font: {
+                            size: 12
+                        }
                     },
                 }
+            },
+            layout: {
+                padding: 0
             },
         }}/>
     )

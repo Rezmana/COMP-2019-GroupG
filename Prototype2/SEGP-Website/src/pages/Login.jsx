@@ -98,7 +98,7 @@ export function Login() {
       {/* 如果用户未登录，则显示登录表单 */}
       {!isLoggedIn && (
         <>
-          <h2>Login</h2>
+          <h1 className="title">Login</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
             <input
@@ -118,6 +118,7 @@ export function Login() {
               onChange={handlePassword}
               required
             />
+            <br/>
             <button type="submit">Login</button>
           </form>
           {error && <p>{error}</p>}

@@ -144,7 +144,9 @@ export const AdoptNDonate = () => {
     }, []);
     
     return (
-        <div className="donation-page-container container main-container">
+        <div>
+            <br/>
+        <div className="donation-page-container main-container">
             {/*捐赠模块 (donation module)*/}
             <div className="adoption-container"> 
                 <div className="adoption-title">Welcome to Donation Page{username ? ', '+username : ''}!</div>
@@ -222,6 +224,8 @@ export const AdoptNDonate = () => {
 
 
         </div>
+        </div>
+
     )
 }
 
