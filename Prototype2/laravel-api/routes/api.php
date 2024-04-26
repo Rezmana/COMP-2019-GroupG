@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::apiResource('HomePage', CoordinatesController::class);S
 
 Route::get('/getCoordinates', [CoordinatesController::class, 'index']);
+Route::get('/getCoordinates/{id}', [CoordinatesController::class, 'show']);
 
 Route::get('/article', [ApiArticleController::class, 'index']);
 

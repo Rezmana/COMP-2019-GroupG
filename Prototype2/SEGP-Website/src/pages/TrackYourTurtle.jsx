@@ -1,27 +1,15 @@
-import React from "react"
-import "./HomePage.css";
-// import images from 'assets/images';
+import React from 'react'
+import "leaflet/dist/leaflet.css";
+import axios from "axios";
+import { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip, Polyline } from "react-leaflet"
+import { Icon, map, marker } from 'leaflet';
+import { Map } from '../components/Map';
+
 export const TrackYourTurtle = () => {
     return(
-    <div>
-        <link rel="stylesheet" type="text/css" href="HomePage.css" />
-        <img src="src\assets\images\SeatruHeader.png" className="imghead" />
-        
-    {/* <img src="img/SeatruHeader.png" class="imghead"> */}
-    <div class="scroll"> 
-        <a href="NewHome.html">Home</a>
-        <a href="Graphs.html">Graphs</a>
-        <a class="active" href="TrackYourTurtle.html">Track your Turtle</a>
-        <a href="AdoptorDonate.html">Adopt or Donate</a>
-        <a href="ContactUs.html">Contact Us</a>
-    </div>
-
-    <div class="bord">
-        <h1>Live Migration Update</h1>
-        {/* <img src="img/World map Test.jpg" class="image"> */}
-        <p>(This is currently just an image, functionality will come later)</p>
-    </div>  
-
-    </div>
+        <div>
+            <Map></Map>
+        </div>
     )
 }
