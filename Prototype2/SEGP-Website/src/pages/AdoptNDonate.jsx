@@ -194,7 +194,7 @@ export const AdoptNDonate = () => {
                 </div>
             </div>
 
-        <div class="donations-layout-container">
+        <div className="donations-layout-container">
             <div className="scrollable-container">
             <table className="top-donors-table">
                 <thead>
@@ -211,7 +211,7 @@ export const AdoptNDonate = () => {
                             <td>{donor.rank}</td>
                             {/* <td>{donor.user.UserID}</td> */}
                             {/* <td>{donor.user.Username}</td> */}
-                            <td>${donor.totalDonation}</td>
+                            <td>RM{donor.totalDonation}</td>
                         </tr>
                     ))}
                 </tbody>
