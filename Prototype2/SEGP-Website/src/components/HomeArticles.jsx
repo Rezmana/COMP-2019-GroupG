@@ -25,7 +25,7 @@ export default function HomeArticles() {
 
 
   return (
-    <div className="container text-center">
+    <div className="text-center">
     <div className="row">
     {data.map((item, index) => (
         <div key={index} className="col">

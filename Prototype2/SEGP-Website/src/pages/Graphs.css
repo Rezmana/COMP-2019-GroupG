@@ -1,19 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'); */
 
-@font-face {
-    font-family: Rubik;
-    src: url("../assets/Fonts/Rubik-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-@font-face {
-    font-family: Rubik;
-    src: url("../assets/Fonts/Rubik-SemiBold.ttf");
-    font-weight: 600;
-    font-style: normal;
-}
-
 .Content {
     display: flex;
     align-items: center;
@@ -26,6 +12,31 @@
     width: 80%;
     padding: 0;
 }
+
+#TempFact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    font-size: 20px;
+    border: 1px solid black;
+    border-color: #00ddb4;
+    
+}
+
+.TurtleFacts{
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center;
+    width: ;
+    padding: 0; */
+    width:800px;
+    text-align: center;
+    
+}
+
+
 
 h1 {
     text-align: center;

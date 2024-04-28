@@ -47,13 +47,13 @@ const Graph = () => {
         labels: time,
         datasets: [
         {
-            label: 'Temperature',
+            label: 'Temperature (in Celsius)',
             data: temperature,
             backgroundColor: 'rgb(255, 99, 132)',
             yAxisID: 'y'
         },
         {
-            label: 'Humidity',
+            label: 'Humidity (in %)',
             data: humidity,
             backgroundColor: 'rgb(10, 99, 132)',
             yAxisID: 'y2'
@@ -84,7 +84,8 @@ const Graph = () => {
                         color: 'rgb(255, 99, 132)',
                         font: {
                             size: 14
-                        }
+                        },
+                        // labelString: 'Temperature (in Celsius)'
                     },
                 },
                 y2: {
@@ -95,12 +96,14 @@ const Graph = () => {
                         font: {
                             size: 14
                         }
+                        
                     },
                 },
                 x: {
                     ticks: { 
+                        color: 'rgb(10, 99, 132)',
                         font: {
-                            size: 12
+                            size: 14
                         }
                     },
                 }

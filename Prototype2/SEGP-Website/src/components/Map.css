@@ -46,6 +46,28 @@
     border-radius: 2rem;
 
   }
+
+  form .fr{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    /* flex-direction: column; */
+    max-width: 400px;
+  }
+
+  .formdiv {
+    display: flex;
+    align-items: center;
+  }
+
+  .cent {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+  }
   
   .cluster-icon {
     background-color: #333;
