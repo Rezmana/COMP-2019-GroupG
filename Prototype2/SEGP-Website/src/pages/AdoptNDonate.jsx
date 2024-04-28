@@ -200,8 +200,8 @@ export const AdoptNDonate = () => {
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>UserID</th>
-                        <th>Username</th>
+                        {/* <th>UserID</th>
+                        <th>Username</th> */}
                         <th>Donation</th>
                     </tr>
                 </thead>
@@ -209,8 +209,8 @@ export const AdoptNDonate = () => {
                     {donors.map((donor, index) => (
                         <tr key={index}>
                             <td>{donor.rank}</td>
-                            {/* <td>{donor.user.UserID}</td>
-                            <td>{donor.user.Username}</td> */}
+                            {/* <td>{donor.user.UserID}</td> */}
+                            {/* <td>{donor.user.Username}</td> */}
                             <td>${donor.totalDonation}</td>
                         </tr>
                     ))}

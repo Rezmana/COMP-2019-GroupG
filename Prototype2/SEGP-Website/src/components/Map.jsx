@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Tooltip, Polyline } from 'react-leafle
 import { Icon } from 'leaflet';
 import axios from 'axios';
 import './Map.css';
+// import 'leaflet/dist/leaflet.css';
 
 export const Map = () => {
   const [data, setData] = useState([]);
@@ -47,7 +48,7 @@ export const Map = () => {
   const renderMarkers = () => { 
     return data.map((item, index) => (
       <Marker key={index} icon={customIcon} position={[parseFloat(item.Longitude), parseFloat(item.Latitude)]}>
-        <Tooltip>{`Turtle ID: ${item.TurtleID}, Longitude: ${item.Longitude}, Latitude: ${item.Latitude}`}</Tooltip>
+        <Tooltip>{`Turtle ID: ${item.TurtleID}, Longitude: ${item.Longitude}, Latitude: ${item.Latitude}, Time:${item.Time}`}</Tooltip>
       </Marker>
     ));
   };
@@ -87,15 +88,18 @@ export const Map = () => {
 
   return (
     <div>
-      <div>
-        <br/>
-        <form onSubmit={displayTurtle}>
-          <input id='SearchBar' placeholder="Enter turtle ID " type='text' value={TurtleData.TurtleID} onChange={(e) => setTurtleData({ ...TurtleData, TurtleID: e.target.value })}></input>
-          <button type='submit'>Search</button>
-        </form>
+      <div className="formdiv">
+        <div className='cent'>
+          <br/>
+          <form className="form fr" onSubmit={displayTurtle}>
+            <input id='SearchBar' placeholder="Enter turtle ID " type='text' value={TurtleData.TurtleID} onChange={(e) => setTurtleData({ ...TurtleData, TurtleID: e.target.value })}></input>
+            <br/>
+            <button type='submit'>Search</button>
+          </form>
+        </div>
       </div>
       <br/>
-      <MapContainer center={[2.8823, 101.22]} zoom={13} scrollWheelZoom={false}>
+      <MapContainer center={[2.8823, 101.22]} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

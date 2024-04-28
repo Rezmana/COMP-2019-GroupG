@@ -53,7 +53,7 @@ const Graph = () => {
             yAxisID: 'y'
         },
         {
-            label: 'Humidity (in %)',
+            label: 'Humidity (%)',
             data: humidity,
             backgroundColor: 'rgb(10, 99, 132)',
             yAxisID: 'y2'
