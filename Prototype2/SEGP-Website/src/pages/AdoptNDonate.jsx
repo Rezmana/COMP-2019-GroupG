@@ -211,7 +211,7 @@ export const AdoptNDonate = () => {
                             <td>{donor.rank}</td>
                             {/* <td>{donor.user.UserID}</td> */}
                             {/* <td>{donor.user.Username}</td> */}
-                            <td>${donor.totalDonation}</td>
+                            <td>RM{donor.totalDonation}</td>
                         </tr>
                     ))}
                 </tbody>
