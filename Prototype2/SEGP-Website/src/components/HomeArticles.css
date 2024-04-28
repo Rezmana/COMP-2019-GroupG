@@ -15,10 +15,25 @@
     font-style: normal;
 }
 
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
 .col h2, .h2 {
     font-family: "Rubik";
     text-align: center;
     font-size: 15;
     text-shadow: 0 0;
     color: #00E2B6;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.container{
+    width: 100%;
 }

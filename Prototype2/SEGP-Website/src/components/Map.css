@@ -4,10 +4,13 @@
     padding: 0;
   }
 
-  #map { height: 180px; }
-
-
   
+/* .Content {
+    display: flex;
+    align-items: center;
+} */
+#map { height: 180px; }
+
   body {
     animation: name duration timing-function delay iteration-count direction fill-mode;
     margin: 0;
@@ -29,12 +32,25 @@
     background-color: #f3e4d7; */
   } 
 
-  form {
+  form .fr{
     display: flex;
     flex-direction: column;
     gap: 1em;
     align-items: center;
-    /* flex-direction: column; */
+    max-width: 400px;
+  }
+
+  .formdiv {
+    display: flex;
+    align-items: center;
+  }
+
+  .cent {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
   }
   
   /* height of the container */

@@ -43,11 +43,11 @@ export const Navbar = () => {
                     <div className="col">
                         <FaUserAlt size={30}></FaUserAlt>
                     </div>
-                    <div className="col">
-                        <div className="row">
+                    <div className="navcol">
+                        <div className="navrow">
                             <button className="navButton" onClick={navLogin}>Login</button>
                         </div>
-                        <div className="row">
+                        <div className="navrow">
                             <button className="navButton" onClick={navSignup}>Signup</button>
                         </div>
                     </div>
