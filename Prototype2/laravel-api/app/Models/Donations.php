@@ -12,7 +12,7 @@ class Donations extends Model
 
     public function user()
     {
-        return $this->belongsTo(UserLogin::class, 'UserID', 'UserID');
+        return $this->belongsTo(User::class, 'UserID', 'id');
     }
 
 }
