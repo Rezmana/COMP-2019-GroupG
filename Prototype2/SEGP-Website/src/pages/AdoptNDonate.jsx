@@ -194,7 +194,7 @@ export const AdoptNDonate = () => {
                 </div>
             </div>
 
-        <div class="donations-layout-container">
+        <div className="donations-layout-container">
             <div className="scrollable-container">
             <table className="top-donors-table">
                 <thead>
