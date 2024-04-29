@@ -25,9 +25,6 @@ Route::post('coordinates', function (Request $request) {
     ]);
 });
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\CsvController;
 use App\Http\Controllers\UserController;
@@ -35,21 +32,6 @@ use App\Http\Controllers\CoordinatesTableController;
 use App\Http\Controllers\TempHumidityTableController;
 use App\Http\Controllers\TurtleController;
 use App\Http\Controllers\ArticleController;
-
-//THESE ARE THE LOGIN PAGE/SIGN UP
-Route::get('/', function () {return redirect('sign-in');})->middleware('guest');
-Route::get('sign-up', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-Route::post('sign-up', [RegisterController::class, 'store'])->middleware('guest');
-Route::get('sign-in', [SessionsController::class, 'create'])->middleware('guest')->name('login');
-Route::post('sign-in', [SessionsController::class, 'store'])->middleware('guest');
-Route::post('verify', [SessionsController::class, 'show'])->middleware('guest');
-Route::post('reset-password', [SessionsController::class, 'update'])->middleware('guest')->name('password.update');
-Route::get('verify', function () {
-	return view('sessions.password.verify');
-})->middleware('guest')->name('verify');
-Route::get('/reset-password/{token}', function ($token) {
-	return view('sessions.password.reset', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
 
 
 //THESE ARE PART OF THE DASHBOARD PAGE
