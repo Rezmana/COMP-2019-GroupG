@@ -99,6 +99,7 @@ export const Map = () => {
         </div>
       </div>
       <br/>
+      <div id='MapSpace'>
       <MapContainer center={[2.8823, 101.22]} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -107,6 +108,7 @@ export const Map = () => {
         {renderMarkers()}
         {renderPolyline()}
       </MapContainer>
+      </div>
     </div>
   );
 };
