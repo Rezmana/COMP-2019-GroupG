@@ -222,8 +222,6 @@ export const AdoptNDonate = () => {
                 <div className="total-donation-container">
                     <p className="total-donation-amount">RM{totalAmount}</p>
                 </div>
-
-            <Footer />
         </div>
         </div>
 

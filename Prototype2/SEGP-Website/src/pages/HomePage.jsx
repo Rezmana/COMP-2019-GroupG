@@ -93,7 +93,6 @@ export const HomePage = () => {
             </div>
             
             <HomeArticles></HomeArticles>
-            <Footer></Footer>
             </Fade>
         </div>
     )

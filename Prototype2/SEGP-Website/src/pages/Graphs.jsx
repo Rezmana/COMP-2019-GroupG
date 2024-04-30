@@ -23,7 +23,6 @@ export const Graphs = () => {
           Behavioral traits and responses to climate change are also impacted by incubation temperature, highlighting the importance of understanding thermal ecology for conservation and management efforts.
         </p>
       </div>
-      <Footer />
     </div>
   )
 }

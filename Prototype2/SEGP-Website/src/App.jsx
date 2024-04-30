@@ -8,6 +8,7 @@ import { Navbar } from "./components/Navigation.jsx";
 import { AdoptNDonate } from "./pages/AdoptNDonate.jsx";
 import { Contact } from "./pages/Contact.jsx";
 import React, { useEffect } from 'react';
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const navigate = useNavigate();
@@ -20,8 +21,6 @@ function App() {
       navigate('/HomePage');
     }
   }, [location.pathname, navigate]);
-
-  
 
   return(
     <div>
@@ -38,6 +37,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
         </Route>
       </Routes>
+      <Footer />
     </div>
   );
   //or this <div><Message /></div>  

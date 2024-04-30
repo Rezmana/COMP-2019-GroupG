@@ -11,7 +11,6 @@ export const TrackYourTurtle = () => {
     return(
         <div>
             <Map></Map>
-            <Footer></Footer>
         </div>
     )
 }

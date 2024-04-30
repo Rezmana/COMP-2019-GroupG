@@ -34,7 +34,6 @@ export const Contact = () => {
 
       <Rollingpic></Rollingpic>
 
-      <Footer></Footer>
     </div>
   );
 };
