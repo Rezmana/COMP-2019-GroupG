@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { Fade } from "react-awesome-reveal";
 import HomeArticles from "../components/HomeArticles";
 import "./HomePage.css";
-
+import Footer from "../components/Footer"
 
 
 export const HomePage = () => {
@@ -93,7 +93,7 @@ export const HomePage = () => {
             </div>
             
             <HomeArticles></HomeArticles>
-
+            <Footer></Footer>
             </Fade>
         </div>
     )
