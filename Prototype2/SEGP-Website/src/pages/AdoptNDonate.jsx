@@ -5,6 +5,7 @@ import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './AdoptNDonate.css';
+import Footer from "../components/Footer"
 
 export const AdoptNDonate = () => {
     const navigate = useNavigate();
@@ -222,7 +223,7 @@ export const AdoptNDonate = () => {
                     <p className="total-donation-amount">RM{totalAmount}</p>
                 </div>
 
-
+            <Footer />
         </div>
         </div>
 
