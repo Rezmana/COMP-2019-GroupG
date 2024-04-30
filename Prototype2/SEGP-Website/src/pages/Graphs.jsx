@@ -3,6 +3,7 @@ import SeaTurtleImage from "../assets/images/Turtle_Nest.jpg";
 import Graph from "../components/Graph"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Graphs.css";
+import Footer from "../components/Footer"
 
 export const Graphs = () => {
   return (
@@ -22,7 +23,7 @@ export const Graphs = () => {
           Behavioral traits and responses to climate change are also impacted by incubation temperature, highlighting the importance of understanding thermal ecology for conservation and management efforts.
         </p>
       </div>
-      
+      <Footer />
     </div>
   )
 }
