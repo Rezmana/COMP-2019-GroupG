@@ -90,7 +90,8 @@ export const Map = () => {
     <div>
       <div className="formdiv">
         <div className='cent'>
-          <br/>
+          <h1>Turtle Map</h1>
+          <p>Enter the turtleID and Hover on the markers to view the details of the turtles</p>
           <form className="form fr" onSubmit={displayTurtle}>
             <input id='SearchBar' placeholder="Enter turtle ID " type='text' value={TurtleData.TurtleID} onChange={(e) => setTurtleData({ ...TurtleData, TurtleID: e.target.value })}></input>
             <br/>
