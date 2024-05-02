@@ -1,8 +1,8 @@
 /* AdoptNDonate.css */
 
 body {
-    overflow-x: hidden; /* 防止页面横向滚动 */
-    margin: 0; /* 去除默认的页面 margin */
+    overflow-x: hidden; 
+    margin: 0; 
 }
 
 .adoption-title {
@@ -32,9 +32,9 @@ body {
 }
 
 .adoption-container {
-    width: 100%; /* 设置容器框在行方向上的宽度 */
+    width: 100%; 
     height: 50%;
-    /*margin-top: 10px; !* 调整容器框与标题之间的距离 *!*/
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,20 +103,20 @@ body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    margin: 0 auto;  /* 添加自动外边距以实现水平居中 */
-    width: 80%;  /* 可调整宽度以适应不同的布局需求 */
+    margin: 0 auto;  
+    width: 80%;  
 }
 
 .anonymous-donation:hover {
-    background-color: #e7e7e7;  /* 淡化背景颜色增加互动性 */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);  /* 加深阴影以增强深度感 */
-    transform: translateY(-3px);  /* 稍微上移增加动态效果 */
+    background-color: #e7e7e7;  
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);  
+    transform: translateY(-3px);  
 }
 
 .anonymous-donation:active {
-    background-color: #d7d7d7;  /* 点击时的背景色 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);  /* 调整阴影 */
-    transform: translateY(1px);  /* 恢复位置模拟按压效果 */
+    background-color: #d7d7d7;  
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    transform: translateY(1px); 
 }
 
 
@@ -186,34 +186,33 @@ body {
 
 /* Scrollable Container for the Donors Table - Reduced Size */
 .scrollable-container {
-    width: 40%; /* 容器宽度减小到40% */
-    max-width: 500px; /* 最大宽度调整为500px */
-    height: 250px; /* 高度调整为250px */
-    overflow-y: auto; /* 垂直方向上超出部分滚动 */
-    overflow-x: hidden; /* 水平方向隐藏超出部分 */
-    border-radius: 8px; /* 圆角回归到8px */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 轻微阴影以增强视觉效果 */
-    margin: 20px auto; /* 居中显示 */
-    border: 1px solid #ccc; /* 边框可见性保持 */
-    background-color: #ffe096; /* 背景色为白 */
-    padding: 5px; /* 内部间距减小到5px */
-    /* 添加虚化的DONORS背景文字 */
+    width: 40%; 
+    max-width: 500px; 
+    height: 250px; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    margin: 20px auto; 
+    border: 1px solid #ccc; 
+    background-color: #ffe096; 
+    padding: 5px; 
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dy=".35em" text-anchor="middle" font-size="100" font-family="Arial" fill="%23FFEEC1">DONORS</text></svg>');
     background-size: cover;
-    position: relative; /* 设置定位方式 */
+    position: relative; 
 }
 
 .top-donors-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    font-size: 0.85em; /* 字体大小适当减小 */
+    font-size: 0.85em; 
     line-height: 1.1;
 }
 
 .top-donors-table th, .top-donors-table td {
     text-align: left;
-    padding: 4px 6px; /* 单元格padding适当调整 */
+    padding: 4px 6px; 
     border-bottom: 1px solid #ddd;
 }
 
@@ -242,23 +241,23 @@ body {
 
 /* Total Donation Style - Vertical Layout */
 .total-donation-container {
-    display: flex;  /* 使用Flexbox */
-    flex-direction: column;  /* 子元素竖直排列 */
-    align-items: center;  /* 中心对齐子元素 */
-    justify-content: center;  /* 中心对齐内容 */
-    height: 200px;  /* 容器高度 */
-    margin: 30px auto;  /* 居中显示 */
-    padding: 20px;  /* 内部间距 */
-    background-color: #f0f8ff;  /* 淡蓝色背景 */
-    border: 2px solid #007bff;  /* 蓝色边框 */
-    border-radius: 15px;  /* 圆角边框 */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  /* 阴影效果 */
-    width: 50%;  /* 宽度 */
-    max-width: 300px;  /* 最大宽度 */
-    transition: all 0.3s ease-in-out;  /* 过渡效果 */
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    height: 200px;  
+    margin: 30px auto;  
+    padding: 20px;  
+    background-color: #f0f8ff;  
+    border: 2px solid #007bff;  
+    border-radius: 15px;  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);  
+    width: 50%;  
+    max-width: 300px;  
+    transition: all 0.3s ease-in-out; 
     background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><text x="25%" y="50%" dy="-0.1em" text-anchor="middle" font-size="35" font-family="Arial" fill="%23d6e6ff">TOTAL DONATION</text></svg>'); /* 修正位置的虚化文字 */
-    background-size: cover; /* 背景大小覆盖整个容器 */
-    position: relative; /* 设置定位方式 */
+    background-size: cover; 
+    position: relative; 
 }
 
 .total-donation-amount {
@@ -270,7 +269,7 @@ body {
 }
 
 .total-donation-container:hover {
-    transform: scale(1.1);  /* 悬停时放大 */
+    transform: scale(1.1);  
     box-shadow: 0 12px 24px rgba(0,0,0,0.3);
 }
 

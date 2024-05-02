@@ -67,12 +67,12 @@ export function Login() {
   };
 
   const handleLogout = () => {
-    // 清除sessionStorage中的用户名
+    // sessionStorage
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('donating');
-    // 设置登录状态为 false
+   
     setIsLoggedIn(false);
-    // 导航回登录页面
+    //
     navigate('/login')
   }
 
@@ -88,14 +88,14 @@ export function Login() {
 
   return (
  <div className="loginsignup-container">
-      {/* 如果用户已登录，则显示欢迎信息和登出按钮 */}
+    
       {isLoggedIn && (
         <>
           <p>Welcome, {username}</p>
           <button onClick={handleLogout}>Logout</button>
         </>
       )}
-      {/* 如果用户未登录，则显示登录表单 */}
+
       {!isLoggedIn && (
         <>
           <h1 className="title">Login</h1>

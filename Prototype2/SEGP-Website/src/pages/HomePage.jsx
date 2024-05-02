@@ -24,6 +24,9 @@ export const HomePage = () => {
 
 
     return (
+        // This is the Home Page of the website where the user can learn about the sea turtles in Malaysia and how they are tracked
+        // The page also displays some statistics about the poaching of sea turtles and the threats they face
+        // The page also displays some articles about sea turtles
         <div className="Content">
             <Fade>
             <div>

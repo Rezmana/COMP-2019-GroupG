@@ -13,23 +13,6 @@ class CoordinatesTableController extends Controller
         return view('pages.coordinates-table.index', compact('coordinates'));
     }
 
-    // public function create() 
-    // {
-    //     return view('user-management.create');
-    // }
-
-    // public function store(Request $request) 
-    // {
-    //     $attributes = request()->validate([
-    //         'Username' => 'required|max:255',
-    //         'Password' => 'required|max:255',
-    //         'Email' => 'required|email'
-    //     ]);
-
-    //     Userlogin::create($attributes);
-
-    //     return redirect('user-management');
-    // }
 
     public function edit(float $Latitude, float $Longitude, string $Time)
     {

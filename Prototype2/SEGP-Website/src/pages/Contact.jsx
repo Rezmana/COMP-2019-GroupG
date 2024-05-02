@@ -31,7 +31,7 @@ export const Contact = () => {
       <h1>Contact Us</h1>
       <p>If you have any queries please do not hesitate to ask.<br></br> We will do our best to get back to you within 24 hours.</p>
       <Email></Email>
-
+      {/* Adding in component for picture in the contact us */}
       <Rollingpic></Rollingpic>
 
     </div>

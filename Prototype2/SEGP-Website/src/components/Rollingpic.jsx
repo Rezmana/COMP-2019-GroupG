@@ -16,7 +16,7 @@ export default function Rollingpic() {
 
     function imgMove() {
         let mlen = Math.floor(len / 2);
-        let translateValue = 150 / mlen; // 根据图片数量动态计算 translateX 的值
+        let translateValue = 150 / mlen; // translateX 
         let leftImgIndex, rightImgIndex;
 
         for (let i = 0; i < mlen; i++) {

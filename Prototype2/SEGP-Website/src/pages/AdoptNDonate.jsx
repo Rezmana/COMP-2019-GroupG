@@ -20,7 +20,7 @@ export const AdoptNDonate = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleDonationChange = (e) => {
-        // 限制输入的最大值为100000 (Limit input to a maximum value of 100000)
+        // 100000 (Limit input to a maximum value of 100000)
         let newValue = Math.min(parseInt(e.target.value, 10) || 0, 100000);
         if (newValue === 0) {
             newValue = '';
@@ -40,12 +40,12 @@ export const AdoptNDonate = () => {
 
 
     const handleBlur = () => {
-        // 如果输入框为空，表示失焦时用户删除了数字，将 isBlurred 设置为 true (If the input box is empty, it means the user deleted the number when out of focus, set isBlurred to true)
+        //  isBlurred  true (If the input box is empty, it means the user deleted the number when out of focus, set isBlurred to true)
         setIsBlurred(donationAmount === '');
     };
 
     const handleScroll = () => {
-        // 根据滚动条位置设置显示的位置 (Set the displayed position based on the scroll bar position)
+        //  (Set the displayed position based on the scroll bar position)
         setScrollPosition(
             window.scrollX === 0 ? 'flex-start' : window.scrollX + window.innerWidth >= document.body.scrollWidth - 16 ? 'flex-end' : 'center'
         );
@@ -69,16 +69,16 @@ export const AdoptNDonate = () => {
             sessionStorage.setItem('donating', true);
             navigate('/login');
         } else if (!isAnonymously && isLoggedIn) {
-            // 用户登录且不匿名 (User logged in and not anonymous)
+            //  (User logged in and not anonymous)
             axios.post('http://localhost:8000/api/donate', {
                 username,
                 donationAmount: donationAmountDouble,
                 isAnonymously: false 
             })
             .then(response => {
-                console.log(response.data.message); // 打印后端返回的消息 (show msg returned from backend)
+                console.log(response.data.message); // (show msg returned from backend)
                 alert('Thank for your donation, ' + username + '!');
-                setDonationAmount(''); // 清空捐赠金额 (clear donation amount)
+                setDonationAmount(''); //  (clear donation amount)
                 sessionStorage.removeItem('donating');
             })
             .catch(error => {
@@ -92,9 +92,9 @@ export const AdoptNDonate = () => {
                 isAnonymously: true
             })
             .then(response => {
-                console.log(response.data.message); // 打印后端返回的消息 (show msg returned from backend)
+                console.log(response.data.message); //  (show msg returned from backend)
                 alert('Thank for your donation!');
-                setDonationAmount(''); // 清空捐赠金额 (clear donation amount)
+                setDonationAmount(''); //  (clear donation amount)
             })
             .catch(error => {
                 console.error('Error donating:', error);
@@ -113,9 +113,9 @@ export const AdoptNDonate = () => {
     }, []);
 
     useEffect(() => {
-        // 获取sessionStorage中的用户名数据 (Get username data in sessionStorage)
+        //  (Get username data in sessionStorage)
         const storedUsername = sessionStorage.getItem('username');
-        setUsername(storedUsername); // 设置用户名数据到state中 (Set username data to state)
+        setUsername(storedUsername); // (Set username data to state)
 
         setIsLoggedIn(typeof storedUsername === 'string' && storedUsername.trim() !== '');
 
@@ -148,7 +148,7 @@ export const AdoptNDonate = () => {
         <div>
             <br/>
         <div className="donation-page-container main-container">
-            {/*捐赠模块 (donation module)*/}
+            {/* (donation module)*/}
             <div className="adoption-container"> 
                 <div className="adoption-title">Welcome to Donation Page{username ? ', '+username : ''}!</div>
                 <div className="adoption-buttons-list">
@@ -172,8 +172,8 @@ export const AdoptNDonate = () => {
                                value={donationAmount}
                                onChange={handleDonationChange}
                                onBlur={handleBlur}
-                               maxLength="6" // 限制输入长度为六位数 (Limit input length to six digits)
-                               placeholder={isBlurred ? 'Any amount' : null} // 根据 isBlurred 显示虚化的单位
+                               maxLength="6" //(Limit input length to six digits)
+                               placeholder={isBlurred ? 'Any amount' : null} //  isBlurred
                         />
                     </div>
                 </div>
@@ -183,8 +183,8 @@ export const AdoptNDonate = () => {
                         <input id="btn-item-input-checkbox"
                                type="checkbox"
                                name="donate-anonymously"
-                               checked={isAnonymously} // 设置复选框的选中状态 (Set the checked state of a checkbox)
-                               onChange={handleAnonymousChange} // 监听复选框的变化 (Listen for checkbox changes)
+                               checked={isAnonymously} // (Set the checked state of a checkbox)
+                               onChange={handleAnonymousChange} //  (Listen for checkbox changes)
                         />
                     </div>
                     <div>Donate Anonymous</div>

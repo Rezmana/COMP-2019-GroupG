@@ -6,6 +6,8 @@ import "./Graphs.css";
 import Footer from "../components/Footer"
 
 export const Graphs = () => {
+  // This is the Graphs page where the temperature and humidity graph of the turtle's egg nest is displayed
+  // The graph is displayed using the Graph component imported from the components folder
   return (
     <div className='Content'>
       <h3>Temperature and Humidity Graph of the Turtle's egg nest</h3>

@@ -10,14 +10,17 @@ export const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const navLogin = () => {
+        // Navigate to the login page when the login button is clicked 
         navigate('/Login');
     }
 
     const navSignup = () => {
+        // Navigate to the signup page when the signup button is clicked
         navigate('/Signup');
     }
 
     const navLogout = () => {
+        // Remove the username from sessionStorage and navigate to the login page
         sessionStorage.removeItem('username');
         navigate('/Login');
     }
@@ -38,6 +41,7 @@ export const Navbar = () => {
             )
         }
         else {
+            // The layout of the login and signup buttons
             return (
                 <div className="button-container">
                     <div className="col">
@@ -57,6 +61,7 @@ export const Navbar = () => {
     }
 
     return (
+        // The layout of the navigation bar
         <div className='Container'>
         <nav>
             <div className="Navigation">

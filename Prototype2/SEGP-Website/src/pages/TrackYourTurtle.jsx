@@ -8,8 +8,11 @@ import { Map } from '../components/Map';
 import Footer from "../components/Footer"
 
 export const TrackYourTurtle = () => {
+    // This is a page that allows the user to track the turtles that have been tagged
+
     return(
         <div>
+            
             <Map></Map>
         </div>
     )

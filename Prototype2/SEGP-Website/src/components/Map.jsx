@@ -13,11 +13,13 @@ export const Map = () => {
 
   useEffect(() => {
     const getAllCoordinates = async () => {
+      // Fetch data from the API 
       try {
         const response = await fetch('http://localhost:8000/api/getCoordinates');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
+        // Convert the response to JSON and set the data state
         const jsonData = await response.json();
         setData(jsonData);
         console.log(jsonData);
@@ -46,6 +48,7 @@ export const Map = () => {
 
 
   const renderMarkers = () => { 
+    // Mapping through the data and displaying the markers on the map with the details of the turtles
     return data.map((item, index) => (
       <Marker key={index} icon={customIcon} position={[parseFloat(item.Longitude), parseFloat(item.Latitude)]}>
         <Tooltip>{`Turtle ID: ${item.TurtleID}, Longitude: ${item.Longitude}, Latitude: ${item.Latitude}, Time:${item.Time}`}</Tooltip>
@@ -54,9 +57,7 @@ export const Map = () => {
   };
 
   const renderPolyline = () => {
-    console.log('Rendering Polyline...');
-    console.log('Button Clicked:', buttonClicked);
-    console.log('Polyline Positions:', polylinePositions);
+
     
     if (buttonClicked && polylinePositions.length > 0) {
       const polylinePositions = data.map(item => [parseFloat(item.Longitude), parseFloat(item.Latitude)]);
@@ -78,6 +79,7 @@ export const Map = () => {
       setPolylinePositions([]); // Reset polyline positions
       setButtonClicked(false); // Reset button clicked state
     } else {
+      // Filter data based on search criteria, for example, TurtleID and update polylinePositions state
     const filteredData = data.map(item => item.TurtleID === TurtleData.TurtleID);
     const newPolylinePositions = filteredData.map(item => [parseFloat(item.Longitude), parseFloat(item.Latitude)]);
     setPolylinePositions(newPolylinePositions);
@@ -101,11 +103,13 @@ export const Map = () => {
       </div>
       <br/>
       <div id='MapSpace'>
+        {/* A component to display the map onto the page with the settings applied */}
       <MapContainer center={[2.8823, 101.22]} zoom={13} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {/* Rendering the markers and the line between the markers */}
         {renderMarkers()}
         {renderPolyline()}
       </MapContainer>

@@ -9,10 +9,12 @@ export default function HomeArticles() {
   useEffect(() => {
     const getAllArticles = async () => {
       try {
+        // Fetch data from the API
         const response = await fetch('http://localhost:8000/api/article');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
+        // Convert the response to JSON and set the data state
         const jsonData = await response.json();
         setData(jsonData);
         console.log(jsonData);
@@ -25,6 +27,7 @@ export default function HomeArticles() {
 
 
   return (
+    //  Display the articles on the home page in a grid format
     <div className="text-center">
     <div className="row">
     {data.map((item, index) => (

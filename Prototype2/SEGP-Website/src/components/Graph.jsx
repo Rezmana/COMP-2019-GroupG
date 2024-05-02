@@ -30,7 +30,8 @@ const Graph = () => {
         humidity.push(graphData[i].Humidity);
         time.push(graphData[i].Time);
         
-        if (i != 0) {  
+        if (i != 0) {
+            // This is to sort the data in ascending order of time 
             for (let x = i; x > 0; x--) {
                 let t1 = new Date(time[x]);
                 let t2 = new Date(time[x-1]);
@@ -44,6 +45,7 @@ const Graph = () => {
     };
 
     const data = {
+        // This is the data for the graph that will be displayed on the website
         labels: time,
         datasets: [
         {
@@ -78,6 +80,7 @@ const Graph = () => {
             },
             scales: {
                 y: {
+                    // For the left y-axis (Temperature)
                     type: 'linear', 
                     position: 'left',
                     ticks: { 
@@ -85,10 +88,10 @@ const Graph = () => {
                         font: {
                             size: 14
                         },
-                        // labelString: 'Temperature (in Celsius)'
                     },
                 },
                 y2: {
+                    // For the right y-axis (Humidity)
                     type: 'linear',
                     position: 'right',
                     ticks: { 
@@ -100,6 +103,7 @@ const Graph = () => {
                     },
                 },
                 x: {
+                    // For the x-axis (Time)
                     ticks: { 
                         color: 'rgb(10, 99, 132)',
                         font: {

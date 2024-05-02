@@ -7,7 +7,7 @@ export default function Email() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    // Send email to the user using emailjs service
     emailjs
       .sendForm('service_8i1du6q', 'template_057ur2c', form.current, {
         publicKey: 'b_1jIXYInLL0ONMuP',
@@ -22,6 +22,7 @@ export default function Email() {
       );
   };
     return (
+      // Form for user to input their name, email and message 
       <div className='container'>
         <form ref={form} onSubmit={sendEmail}>
           <label>Name</label>
